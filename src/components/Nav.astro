@@ -4,11 +4,11 @@
 
 <nav>
      <ul id="mobile">
-        <img class="logo" src="/img/logo_1.svg" alt="logo">
-        <img class="burger" src="/img/burger_open.svg" alt="burgermenu">
-        <img class="hidden burger" src="/img/burger_closed.svg" alt="burgermenu">
+        <a href="/"> <img class="logo" src="/img/logo_1.svg" alt="logo"></a>
+        <img class="burger burger_open" src="/img/burger_open.svg" alt="burgermenu">
+        <img class="burger burger_closed hidden" src="/img/burger_closed.svg" alt="burgermenu">
     </ul>
-    <ul id="menu" class="hiddens">
+    <ul id="menu" class="hidden">
         <li><img src="/img/books.svg" alt=""></li>
         <li><a href="/kalender/">Kalender</a></li>
         <li><a href="/forlag/">Forlag</a></li>
@@ -25,6 +25,43 @@
         <li><a href="/podcast/">Podcast</a></li>
         <li><a href="/udlejning/">Udlejning</a></li>
     </ul>
+
+    <script>
+        const burgerOpen = document.querySelector('.burger_open');
+        const burgerClosed = document.querySelector('.burger_closed');
+        const menu = document.querySelector('#menu');
+    
+        window.addEventListener("load", sidenVises);
+
+        function sidenVises() {
+
+        //viser menu icon
+        burgerOpen.classList.remove('hidden');
+    
+        //skjuler menu
+        burgerClosed.classList.add('hidden');
+        menu.classList.add('hidden');
+    
+        //sætter klik på burger knap
+        burgerOpen.addEventListener("click", toggleMenu);
+
+        }
+
+        function toggleMenu() {
+            console.log(toggleMenu);
+
+            //skjuler menu icon
+            burgerOpen.classList.add('hidden');
+            burgerClosed.classList.remove('hidden');
+
+            //viser menu
+            menu.classList.remove('hidden');
+
+            //sætter klik på closeIcon
+            burgerClosed.addEventListener('click', sidenVises);
+        }
+    
+    </script>
 </nav>
 
 <style>
@@ -53,7 +90,7 @@ img {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
-    position: fixed;
+    display: none;
     width: 100%;
     background-color: var(--ren_hvid);
     margin-top: 7rem;
@@ -72,5 +109,13 @@ img {
     display: none;
   }
 }
+
+@media only screen and (min-width: 600px) {
+    #mobile, menu{
+    display: none;
+  }
+}
+
+
 
 </style>
