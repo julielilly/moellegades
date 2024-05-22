@@ -18,6 +18,7 @@ a,li {
 a:hover, li:hover {
   color: var(--lov_gron);
   font-style: italic;
+  transition: color .3s ease;
 }
 
 * {
