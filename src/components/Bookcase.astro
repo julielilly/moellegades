@@ -1,0 +1,81 @@
+---
+
+---
+
+<section id="bookcase">
+<img class="book" id="omnogen" src="/img/OmNogen_ryg.png" alt="bog">
+<div  class="info_box 1">
+    <h1>test</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
+</div>
+<img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+<div class="info_box 2">
+    <h1>test</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
+</div>
+<img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+<div class="info_box 3">
+    <h1>test</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
+</div>
+<img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+<div class="info_box 4">
+    <h1>test</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
+</div>
+<img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+<div class="info_box 5">
+    <h1>test</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
+</div>
+
+<script>
+    //find elementer
+    const books = document.querySelectorAll(".book")
+    console.log(books)
+
+    const infoBoxes = document.querySelectorAll(".info_box")
+    console.log(infoBoxes)
+
+    books.classList.add("hidden")
+
+
+    //start funktion ved scroll
+    window.addEventListener('click', showTextbox);
+
+    //funktion til scroll
+    function showTextbox() {
+
+            //find de enkelte circles 
+            books.forEach(book => {
+                    const circleTop = circle.getBoundingClientRect().top;
+                    const circleBottom = circle.getBoundingClientRect().bottom;
+                    const circleHeight = circle.getBoundingClientRect().height;
+
+
+                    console.log({ circle, circleTop });
+                    console.log({ circle, circleBottom });
+
+                    //hvis toppen af cirklen kommer op forbi bunden af vinduet, trigger animation
+
+            });
+
+    }
+
+</script>
+
+</section>
+
+<style>
+    #bookcase {
+        display: flex;
+    }
+
+    .info_box {
+        background-color: grey;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
