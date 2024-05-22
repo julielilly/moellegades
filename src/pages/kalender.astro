@@ -25,11 +25,57 @@ import Layout from "../layouts/Layout.astro";
         fællesskab.
       </p>
     </div>
-    <div><img src="/img/orange_book.svg" alt="book" /></div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img class="pic1" src="/img/orange_book.svg" alt="bok" />
+      </div>
+      <div class="mySlides fade">
+        <img class="pic1" src="img/green_book.svg" alt="bok" />
+      </div>
+      <div class="mySlides fade">
+        <img class="pic1" src="img/books.svg" alt="bok grønn" />
+      </div>
+    </div>
   </section>
+  <script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+
+      for (i = 0; i < slides.length; i++) {
+        (slides[i] as HTMLElement).style.display = "none";
+      }
+
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+
+      (slides[slideIndex - 1] as HTMLElement).style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+  </script>
 </Layout>
 
 <style>
+  .slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    grid-column: 2 / 3;
+  }
+
+  .mySlides {
+    display: none;
+  }
+
+  .mySlides img {
+    width: 100%;
+    height: auto;
+  }
   #grid1-1 {
     display: grid;
     grid-template-columns: 1fr;
