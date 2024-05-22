@@ -11,8 +11,6 @@
   }
 }
 
-
-
 :root {
   /* colors */
   --ren_hvid: #ffffff;
@@ -22,6 +20,7 @@
 }
 
 h1{
+  
   font-size: 88px;
   font-family: garamond;
   font-weight: bold;
