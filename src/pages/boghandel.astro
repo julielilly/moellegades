@@ -31,7 +31,7 @@ import Layout from "../layouts/Layout.astro";
       <h3>Udover de store danske forlag, fører vi blandt andet:</h3>
       <p>
         AFV Press, Antipyrine, Arena, Aurora Boreal, Autor, Arkiv for detaljer,
-        Aleatorik • . Baggaardsbaroner, Baggrund, Basilisk • Chateaux, Cris og
+        Aleatorik • Baggaardsbaroner, Baggrund, Basilisk • Chateaux, Cris og
         Guldmann • Dockhaveri • Emancipat(t/ss)ionsfrugten, Ekbatana, Escho,
         Etcetera • Flamme, Forlaget Møllegades Boghandel • Gaia • H Press,
         Harpyie, Hurricane • Kolon, Korridor, Kronstork • Laboratoriet for
@@ -43,7 +43,7 @@ import Layout from "../layouts/Layout.astro";
         Wunderbuch • Øverste Kirurgiske.
       </p>
     </div>
-    <div>
+    <div id="tid">
       <h3>Og tidsskrifterne:</h3>
       <p>
         Addenda, Amulet • Balthazar, Beijing Trondheim • FETT • Hvedekorn, Hæfte
@@ -55,3 +55,16 @@ import Layout from "../layouts/Layout.astro";
     </div>
   </section>
 </Layout>
+
+<style>
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+  }
+
+  #tid {
+    padding-top: 30rem;
+    text-align: right;
+  }
+</style>

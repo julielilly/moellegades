@@ -20,10 +20,13 @@ a,li {
   padding: 0;
 }
 
+main {
+padding-top: 7rem;
+}
 
 @media only screen and (min-width: 600px) {
   main {
-    padding: 8rem;
+    padding: 14rem 8rem;
   }
 }
 
@@ -36,7 +39,6 @@ a,li {
 }
 
 h1{
-
   font-size: 5.50rem;
   font-family: garamond;
   font-weight: bold;
