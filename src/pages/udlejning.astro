@@ -1,8 +1,73 @@
 ---
-
-import Layout from '../layouts/Layout.astro'
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <section id="grid1-1">
+    <div>
+      <h1>Udlejning af lokaler</h1>
+      <p>
+        Møllegades Boghandel tilbyder udlejning af vores hyggelige og
+        inspirerende lokaler. Uanset om du har brug for et sted til en
+        læsekreds, skrivegruppe eller bogreception, har vi de perfekte rammer.
+        Læs videre for at se, hvordan vores baglokale og forlokale kan opfylde
+        dine behov.
+      </p>
+    </div>
+    <div>
+      <img src="/img/books.svg" alt="book" />
+    </div>
+  </section>
+  <section id="grid1-1">
+    <div>
+      <h1>Forlokalet</h1>
+      <p>
+        Forlokalet i Møllegades Boghandel kan bruges til bogreceptioner og andre
+        litterære arrangementer. Det åbne og indbydende miljø er ideelt til at
+        fejre nye udgivelser, holde oplæsninger og samle litteraturentusiaster
+        til spændende diskussioner. Med plads til både forfattere og læsere
+        tilbyder forlokalet en unik mulighed for at netværke og dele passionen
+        for litteratur. Kontakt os for at høre mere om, hvordan du kan leje
+        forlokalet til dit næste arrangement.
+      </p>
+      <p>Telefon: +45 29 90 48 86</p>
+      <p>Mail: info@moellegadesbohandel.dk</p>
+    </div>
+    <div><img src="/img/green_book.svg" alt="book" /></div>
+  </section>
+  <section id="grid1-1">
+    <div><img src="/img/orange_book.svg" alt="book" /></div>
+    <div>
+      <h1>Baklokalet</h1>
+      <p>
+        Vores baglokale fungerer som et læse- og skrivekreds om aftenen til en
+        pris af 500 kr. Dette hyggelige og inspirerende rum er perfekt til små
+        grupper, der ønsker at fordybe sig i litteraturen og dele deres tanker
+        og ideer. Uanset om det er for at læse og diskutere nye værker eller for
+        at skrive og få feedback fra ligesindede, skaber baglokalet en intim og
+        kreativ atmosfære. Kontakt os for at reservere baglokalet til din næste
+        læse- eller skrivekreds.
+      </p>
+      <p>Telefon: +45 29 90 48 86</p>
+      <p>Mail: info@moellegadesbohandel.dk</p>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
+  }
+
+  h1 {
+    padding: 30px;
+    margin: 20px;
+  }
+
+  p {
+    padding: 10px;
+    margin: 30px;
+  }
+</style>
