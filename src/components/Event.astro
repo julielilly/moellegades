@@ -1,0 +1,40 @@
+---
+const { episode, title, dato, tid, p, img } = Astro.props;
+---
+
+<section id="grid1-1">
+  <div>
+    <h3>{dato}</h3>
+    <p>{tid}</p>
+    <img src="" alt="" />{img}<img />
+  </div>
+  <div>
+    <h3>{title}</h3>
+    <p>{p}</p>
+  </div>
+</section>
+
+<style>
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  p {
+    padding-top: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    padding-left: 17rem;
+    padding-top: 13rem;
+  }
+  @media only screen and (min-width: 600px) {
+    main {
+      padding: 14rem 8rem;
+    }
+    #grid1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
