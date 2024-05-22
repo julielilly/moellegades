@@ -8,8 +8,8 @@
         <img class="burger" src="/img/burger_open.svg" alt="burgermenu">
         <img class="hidden burger" src="/img/burger_closed.svg" alt="burgermenu">
     </ul>
-    <ul id="menu" class="hidden">
-        <li><a href="/">Forside</a></li>
+    <ul id="menu" class="hiddens">
+        <li><img src="/img/books.svg" alt=""></li>
         <li><a href="/kalender/">Kalender</a></li>
         <li><a href="/forlag/">Forlag</a></li>
         <li><a href="/boghandel/">Boghandlen</a></li>
@@ -33,6 +33,10 @@
     display: none;
 }
 
+img {
+    width: 50px;
+}
+
 #mobile, #desktop {
     display: flex;
     flex-direction: row;
@@ -42,6 +46,19 @@
     position: fixed;
     background-color: var(--ren_hvid);
     width: 100%;
+}
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: var(--ren_hvid);
+    margin-top: 7rem;
+    padding: 2rem;
+    height: 90vh;
 }
 
 .logo {
