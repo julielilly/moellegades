@@ -15,7 +15,10 @@
 
 :root {
   /* colors */
-  --Pure_white: #ffffff;
+  --ren_hvid: #ffffff;
+  --lov_gron: #008000;
+  --solskind_orange:#FFA502;
+  --natte_sort:#000000;
 }
 
 h1{
@@ -29,12 +32,14 @@ h2{
   font-size: 36px;
   font-family: garamond;
   font-weight: bold;
+  line-height: 150%;
 }
 
 h3{
   font-size: 48px;
   font-family: garamond;
   font-weight: medium;
+  line-height: 125%;
 }
 
 p{
