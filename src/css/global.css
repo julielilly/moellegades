@@ -1,3 +1,18 @@
+
+@font-face {
+  font-family: garamond;
+  src: url(../fonts/EBGaramond-VariableFont_wght.woff2);
+}
+@font-face {
+  font-family: maitree;
+  src: url(../fonts/Maitree-Regular.woff2);
+}
+
+a,li {
+  list-style: none;
+  text-decoration: none;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,7 +21,7 @@
 
 
 @media only screen and (min-width: 600px) {
-  main{
+  main {
     padding: 8rem;
   }
 }
@@ -20,7 +35,7 @@
 }
 
 h1{
-  
+
   font-size: 88px;
   font-family: garamond;
   font-weight: bold;
@@ -43,11 +58,7 @@ h3{
 
 p{
   font-size: 24px;
-  font-family: garamond;
+  font-family: maitree;
 }
 
 
-@font-face {
-  font-family: garamond;
-  src: url(../fonts/fonts/EBGaramond-VariableFont_wght.woff2);
-}
