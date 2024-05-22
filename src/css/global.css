@@ -11,6 +11,7 @@
 a,li {
   list-style: none;
   text-decoration: none;
+  font-family:Arial, Helvetica, sans-serif ;
 }
 
 * {
@@ -36,28 +37,33 @@ a,li {
 
 h1{
 
-  font-size: 88px;
+  font-size: 5.50rem;
   font-family: garamond;
   font-weight: bold;
   line-height: 150%;
 }
 
 h2{
-  font-size: 36px;
+  font-size: 2.25rem;
   font-family: garamond;
   font-weight: bold;
   line-height: 150%;
 }
 
 h3{
-  font-size: 48px;
+  font-size: 2.38rem;
   font-family: garamond;
   font-weight: medium;
   line-height: 125%;
 }
 
+h4{
+  font-size: 2.00rem;
+  font-family: garamond;
+}
+
 p{
-  font-size: 24px;
+  font-size:  1.50rem;
   font-family: maitree;
 }
 
