@@ -1,8 +1,55 @@
 ---
-
-import Layout from '../layouts/Layout.astro'
-
+import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
+  <h1>Lyse Nætter</h1>
+  <section id="grid1-1">
+    <div>
+      <p>
+        Lyse Nætter er en litterær gadefestival, der finder sted om sommeren.
+        Festivalen er frivilligt drevet og organiseret af de tre litterære
+        institutioner i Møllegade: LiteraturHaus, Ark Books og Møllegades
+        Boghandel. Festivalen er gratis for alle og foregår udendørs på
+        Møllegade.
+      </p>
+      <p>
+        Lyse Nætter finder typisk sted mellem den 27. august og 3. september og
+        byder på en række litterære arrangementer, oplæsninger, workshops og
+        debatter. Festivalen har til formål at fremme litterær kultur og skabe
+        et rum for både nye og etablerede stemmer inden for litteraturen.
+      </p>
+      <p>
+        Til højre ses plakater fra tidligere år. Vi glæder os til at byde alle
+        velkommen til en uge fyldt med inspirerende litterære oplevelser og
+        fællesskab.
+      </p>
+    </div>
+    <div><img src="/img/orange_book.svg" alt="book" /></div>
+  </section>
 </Layout>
+
+<style>
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  p {
+    padding-top: 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    padding-left: 17rem;
+    padding-top: 13rem;
+  }
+  @media only screen and (min-width: 600px) {
+    main {
+      padding: 14rem 8rem;
+    }
+    #grid1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
