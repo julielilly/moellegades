@@ -15,11 +15,13 @@ import Layout from "../layouts/Layout.astro";
         Boghandel et rum for den gode litteratur, samt de vigtige samtaler om og
         oplevelser med den. Gennem boghandlens mange og forskellige litterære
         arrangementer ønsker vi at bidrage til lokalområdets litterære miljø og
-        den litterære debat. Møllegades Boghandel er et mødested for alle
-        litteratur-interesserede, med plads til fordybelse, nysgerrighed og
-        begejstring. Boghandlen driver også Forlaget Møllegades Boghandel og
-        Møllegades Boghandels Podcast, der hver især har fokus på den nordiske
-        litteratur.
+        den litterære debat.
+      </p>
+      <p id="tekst">
+        Møllegades Boghandel er et mødested for alle litteratur-interesserede,
+        med plads til fordybelse, nysgerrighed og begejstring. Boghandlen driver
+        også Forlaget Møllegades Boghandel og Møllegades Boghandels Podcast, der
+        hver især har fokus på den nordiske litteratur.
       </p>
     </div>
     <div>
@@ -67,16 +69,14 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  #grid1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: auto auto;
-  }
-
   #tid {
     padding-top: 30rem;
     text-align: right;
     padding-left: 5rem;
+  }
+
+  #tekst {
+    padding-top: 2rem;
   }
 
   span {
@@ -85,5 +85,25 @@ import Layout from "../layouts/Layout.astro";
     font-size: 3rem;
     padding: 1rem;
     font-weight: bold;
+  }
+
+  img {
+    max-width: 100%;
+    padding-left: 17rem;
+    padding-top: 13rem;
+  }
+
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (min-width: 600px) {
+    main {
+      padding: 14rem 8rem;
+    }
+    #grid1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
