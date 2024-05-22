@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: garamond;
   src: url(../fonts/EBGaramond-VariableFont_wght.woff2);
@@ -8,17 +7,19 @@
   src: url(../fonts/Maitree-Regular.woff2);
 }
 
-a,li {
+a,
+li {
   list-style: none;
   text-decoration: none;
-  font-family: Helvetica, Arial, sans-serif ;
+  font-family: Helvetica, Arial, sans-serif;
   color: var(--natte_sort);
-  text-transform: uppercase ;
+  text-transform: uppercase;
 }
-a:hover, li:hover {
+a:hover,
+li:hover {
   color: var(--lov_gron);
   font-style: italic;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 * {
@@ -28,33 +29,32 @@ a:hover, li:hover {
 }
 
 main {
-padding-top: 7rem;
+  padding-top: 7rem;
 }
 
 @media only screen and (min-width: 600px) {
   main {
     padding: 14rem 8rem;
   }
-
 }
 
 :root {
   /* colors */
   --ren_hvid: #ffffff;
   --lov_gron: #008000;
-  --solskind_orange:#FFA502;
-  --natte_sort:#000000;
+  --solskind_orange: #ffa502;
+  --natte_sort: #000000;
 }
 
-h1{
-  font-size: 5.50rem;
+h1 {
+  font-size: 5.5rem;
   font-family: garamond;
   font-weight: bold;
   line-height: 150%;
   padding-bottom: 2rem;
 }
 
-h2{
+h2 {
   font-size: 2.25rem;
   font-family: garamond;
   font-weight: bold;
@@ -63,7 +63,7 @@ h2{
   padding-bottom: 2rem;
 }
 
-h3{
+h3 {
   font-size: 2.38rem;
   font-family: garamond;
   font-weight: medium;
@@ -72,26 +72,24 @@ h3{
   padding-bottom: 2rem;
 }
 
-h4{
-  font-size: 2.00rem;
+h4 {
+  font-size: 2rem;
   font-family: garamond;
 }
 
-p{
-  font-size:  1.50rem;
+p {
+  font-size: 1.5rem;
   font-family: maitree;
 }
 
-.footer_body{
-  p{
-    font-size:  1.50rem;
+.footer_body {
+  p {
+    font-size: 1.5rem;
     font-family: Arial, Helvetica, sans-serif;
   }
 
-
-nav ul li {
-  font-size:  1.50rem;
-  font-family:Arial, Helvetica, sans-serif ;
+  nav ul li {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+  }
 }
-}
-
