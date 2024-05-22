@@ -4,56 +4,47 @@
 
 <section id="bookcase">
 <img class="book" id="omnogen" src="/img/OmNogen_ryg.png" alt="bog">
-<div  class="info_box 1">
+<div  class="panel">
     <h1>test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
 </div>
 <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
-<div class="info_box 2">
+<div class="panel">
     <h1>test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
 </div>
 <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
-<div class="info_box 3">
+<div class="panel">
     <h1>test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
 </div>
 <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
-<div class="info_box 4">
+<div class="panel">
     <h1>test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
 </div>
 <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
-<div class="info_box 5">
+<div class="panel">
     <h1>test</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi neque ratione alias similique fuga perferendis architecto assumenda autem vitae, eveniet eligendi delectus quaerat! Tempora iure ex, eius provident sint corporis?</p>
 </div>
 
 <script>
-    //find elementer
-    const books = document.querySelectorAll('.book')
-    console.log(books)
+  var acc = document.getElementsByClassName("book");
+    var i;
 
-    const infoBoxes = document.querySelectorAll('.info_box')
-    console.log(infoBoxes)
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
 
-    //gemmer infoBoxes
-    books.classList.add('hidden')
-
-
-    //start funktion ved scroll
-    books.addEventListener('click', showTextbox);
-
-    //funktion til scroll
-    function showTextbox() {
-
-            //find de enkelte circles 
-            books.forEach(book => {
-                infoBoxes.classList.remove("hidden")
-
-            });
-
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
     }
+  });
+}
 
 </script>
 
@@ -62,13 +53,17 @@
 <style>
     #bookcase {
         display: flex;
+        justify-content: center;
     }
 
-    .info_box {
+    .book {
+        transition: 2s;
+    }
+
+    .panel {
         background-color: grey;
-    }
-
-    .hidden {
         display: none;
     }
+
+
 </style>
