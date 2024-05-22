@@ -5,8 +5,18 @@
 <nav>
      <ul id="mobile">
         <a href="/"> <img class="logo" src="/img/logo_1.svg" alt="logo"></a>
-        <img class="burger burger_open" src="/img/burger_open.svg" alt="burgermenu">
-        <img class="burger burger_closed hidden" src="/img/burger_closed.svg" alt="burgermenu">
+        <div class="burger">
+            <svg class="burger_line line1" width="3" height="23" viewBox="0 0 3 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.893827 22.0174L0.94239 0.350818L2.94238 0.356079L2.89382 22.0227L0.893827 22.0174Z" fill="black"/>
+                </svg>
+            <svg class="burger_line line2" width="3" height="16" viewBox="0 0 3 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.943051 15.0375L0.974616 0.954212L2.97461 0.959473L2.94304 15.0428L0.943051 15.0375Z" fill="black"/>
+                    </svg>
+                    
+            <svg class="burger_line line3" width="4" height="29" viewBox="0 0 4 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.97446 28.056L1.03516 0.972766L3.03516 0.978027L2.97445 28.0613L0.97446 28.056Z" fill="black"/>
+                        </svg>
+        </div>
     </ul>
     <ul id="menu" class="hidden">
         <li><img src="/img/books.svg" alt=""></li>
@@ -27,38 +37,57 @@
     </ul>
 
     <script>
-        const burgerOpen = document.querySelector('.burger_open');
-        const burgerClosed = document.querySelector('.burger_closed');
+        const burger = document.querySelector('.burger');
+        const burgerLines = document.querySelectorAll('.burger_line');
+        const paths = document.querySelectorAll('path');
         const menu = document.querySelector('#menu');
     
         window.addEventListener("load", sidenVises);
 
         function sidenVises() {
-
-        //viser menu icon
-        burgerOpen.classList.remove('hidden');
+            console.log(sidenVises);
     
-        //skjuler menu
-        burgerClosed.classList.add('hidden');
-        menu.classList.add('hidden');
+            //skjuler menu
+            menu.classList.add('hidden');
+            
     
-        //sætter klik på burger knap
-        burgerOpen.addEventListener("click", toggleMenu);
+            //sætter klik på burger knap
+            burger.addEventListener("click", toggleMenu);
 
         }
 
         function toggleMenu() {
             console.log(toggleMenu);
 
-            //skjuler menu icon
-            burgerOpen.classList.add('hidden');
-            burgerClosed.classList.remove('hidden');
+            burgerLines.forEach(line => {
+                line.style.animation = "tilt 0.5s linear forwards"
+            })
+            paths.forEach(path => {
+                path.style.animation = "color 0.5s linear forwards"
+            })
 
-            //viser menu
+            //viser menu med animation
             menu.classList.remove('hidden');
+            menu.style.animation = "swipe 0.5s linear forwards"
 
-            //sætter klik på closeIcon
-            burgerClosed.addEventListener('click', sidenVises);
+            //sætter klik på burgerClosed
+            burger.addEventListener('click', closeMenu);
+        }
+
+        function closeMenu() {
+            console.log(closeMenu);
+            
+            burgerLines.forEach(line => {
+                line.style.animation = "straighten 0.5s linear forwards"
+            })
+            paths.forEach(path => {
+                path.style.animation = "reColor 0.5s linear forwards"
+            })
+
+            //starter lukke animation
+            menu.style.animation = "swipe_away 0.5s linear forwards"
+
+            menu.addEventListener("animationend", sidenVises);
         }
     
     </script>
@@ -73,6 +102,7 @@
 img {
     width: 50px;
 }
+
 
 #mobile, #desktop {
     display: flex;
@@ -100,6 +130,37 @@ img {
     margin-top: 7rem;
     padding: 2rem;
     height: 90vh;
+    animation: swipe 0.5s linear;
+}
+
+.burger_line {
+    transform-origin: bottom;
+}
+
+
+@keyframes swipe {
+  0%   {transform: translateX(600px);}
+  100% {transform: translateX(0);}
+}
+@keyframes swipe_away {
+  0%   {transform: translateX(0);}
+  100% {transform: translateX(600px);}
+}
+@keyframes tilt {
+  0%   {transform: rotate(0) ;}
+  100% {transform: rotate(-45deg) ;}
+}
+@keyframes straighten {
+  0%   {transform: rotate(-45deg);}
+  100% {transform: rotate(0) ;}
+}
+@keyframes color {
+  0%   {fill: var(--natte_sort) ;}
+  100% {fill: var(--lov_gron) ;}
+}
+@keyframes reColor {
+  0%   {fill: var(--lov_gron) ;}
+  100% {fill: var(--natte_sort) ;}
 }
 
 .logo {
