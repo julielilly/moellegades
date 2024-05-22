@@ -6,16 +6,18 @@
 
 <section class="grid_nyhedsbrev">
   <h4>Tilmeld dig vores nyhedsbrev</h4>
-  <article class="">
-    <p class="input">Fornavn</p><p class="input">E-mail</p><p class="input">
-      Efternavn
-    </p><p>Submit</p>
+  <article class="tilmeldbrev">
+    <p class="input">Fornavn</p><hr class="inputline" /><p class="input">
+      E-mail
+    </p><hr class="inputline" /><p class="input">Efternavn</p><hr
+      class="inputline"
+    /><p class="submit">Submit</p>
   </article>
 </section>
 
 <hr />
 
-<section class="border_line">
+<section>
   <article>
     <h4>Boghandlen</h4>
     <article>
@@ -30,14 +32,14 @@
         <p>Åbningstider kan variere</p>
       </div>
     </article>
-    <article class="">
+    <article class="linkslogo">
       <div class="sociale_medier">
         <img src="/img/facebook_icon.svg" alt="" /><img
           src="/img/instagram_icon.svg"
           alt=""
         />
       </div>
-      <img src="/img/logo_1.svg" alt="" />
+      <img class="logo" src="/img/logo_1.svg" alt="" />
     </article>
   </article>
 </section>
@@ -47,14 +49,14 @@
     <h4>Forlaget</h4>
     <p>Forlaget kan kontaktes på</p>
     <p>moellegadesforlag@gmail.com</p>
-    <article>
+    <article class="linkslogo">
       <div class="sociale_medier">
         <img src="/img/facebook_icon.svg" alt="" /><img
           src="/img/instagram_icon.svg"
           alt=""
         />
       </div>
-      <img src="/img/logo_2.svg" alt="" />
+      <img class="logo" src="/img/logo_2.svg" alt="" />
     </article>
   </article>
 </section>
@@ -65,5 +67,35 @@
   }
   .sociale_medier img {
     margin-right: 30px;
+  }
+
+  .submit {
+    margin-top: 18px;
+  }
+
+  .linkslogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .inputline {
+    width: 400px;
+  }
+
+  .logo {
+    justify-self: end;
+    width: 90px;
+  }
+
+  .input {
+    color: #737373;
+    margin-top: 18px;
+  }
+
+  h4 {
+    margin-top: 12px;
+    margin-bottom: 12px;
   }
 </style>
