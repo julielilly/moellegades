@@ -1,30 +1,27 @@
 ---
+import "../css/global.css";
 
-import '../css/global.css'
-
-
-import Nav from '../components/Nav.astro'
-import Footer from '../components/Footer.astro'
-
+import Nav from "../components/Nav.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="da">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/img/logo_1.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Møllegades Boghandel</title>
-	</head>
-	<body>		
-		<header>
-			<Nav />
-		</header>		
-		<main>			
-			<slot />			
-		</main>
-		<footer>
-			<Footer />
-		</footer>	
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo_1.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Møllegades Boghandel</title>
+  </head>
+  <body>
+    <header>
+      <Nav />
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
 </html>
