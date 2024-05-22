@@ -4,21 +4,27 @@
 
 <hr />
 
-<section>
+<section class="grid_nyhedsbrev">
   <h4>Tilmeld dig vores nyhedsbrev</h4>
-  <article class="letter_input"><p>Fornavn</p></article><article
-    class="letter_input"
-  >
-    <p>Efternavn</p>
-  </article><article class="letter_input"><p>E-mail</p></article>
-  <p>Submit</p>
+  <article class="tilmeldbrev">
+    <div class="inputspace">
+      <p class="input">Fornavn</p><hr class="inputline" />
+    </div><div class="inputspace">
+      <p class="input">E-mail</p><hr class="inputline" />
+    </div><div class="inputspace">
+      <p class="input">Efternavn</p><hr class="inputline" />
+    </div><div>
+      <p class="submit">Submit</p>
+    </div>
+  </article>
 </section>
+
 <hr />
 
-<section>
+<section class="grid1_linje_1">
   <article>
     <h4>Boghandlen</h4>
-    <article>
+    <article class="grid1_1">
       <div>
         <p>Møllegade 8A, 2200 København N</p>
         <p>info@moellegadesboghandel.dk</p>
@@ -30,33 +36,106 @@
         <p>Åbningstider kan variere</p>
       </div>
     </article>
-    <article>
-      <div>
-        <img src="/public/img/facebook_icon.svg" alt="" /><img
-          src="/public/img/instagram_icon.svg"
+    <article class="linkslogo">
+      <div class="sociale_medier">
+        <img src="/img/facebook_icon.svg" alt="" /><img
+          src="/img/instagram_icon.svg"
           alt=""
         />
       </div>
-      <img src="/public/img/logo_1.svg" alt="" />
+      <img class="logo" src="/img/logo_1.svg" alt="" />
     </article>
   </article>
   <article>
     <h4>Forlaget</h4>
     <p>Forlaget kan kontaktes på</p>
     <p>moellegadesforlag@gmail.com</p>
-    <article>
-      <div>
-        <img src="/public/img/facebook_icon.svg" alt="" /><img
-          src="/public/img/instagram_icon.svg"
+    <article class="linkslogo">
+      <div class="sociale_medier">
+        <img src="/img/facebook_icon.svg" alt="" /><img
+          src="/img/instagram_icon.svg"
           alt=""
         />
       </div>
-      <img src="/public/img/logo_2.svg" alt="" />
+      <img class="logo" src="/img/logo_2.svg" alt="" />
     </article>
   </article>
 </section>
 
 <style>
-  #letter_input {
+  /*layout*/
+
+  .submit {
+    margin-top: 18px;
+  }
+  section {
+    padding: 5%;
+  }
+
+  .inputline {
+    width: 400px;
+  }
+
+  .input {
+    color: #737373;
+    margin-top: 18px;
+  }
+
+  .inputspace {
+    margin-right: 40px;
+  }
+
+  h4 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  /*logo + sociale medie links*/
+  .sociale_medier img {
+    margin-right: 30px;
+  }
+
+  .linkslogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: start;
+    align-items: center;
+  }
+
+  .logo {
+    justify-self: end;
+    width: 90px;
+  }
+
+  /*mediaquerrieie*/
+  @media only screen and (min-width: 600px) {
+    .grid1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .grid1_linje_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10rem;
+    }
+
+    .grid_nyhedsbrev {
+      display: flex;
+    }
+    .tilmeldbrev {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .inputline {
+      width: 200px;
+    }
+    .inputspace {
+      margin-left: 10px;
+    }
+    .submit {
+      justify-self: end;
+    }
   }
 </style>
