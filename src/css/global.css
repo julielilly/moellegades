@@ -4,7 +4,46 @@
   padding: 0;
 }
 
+
+@media only screen and (min-width: 600px) {
+  main{
+    padding: 8rem;
+  }
+}
+
+
+
 :root {
   /* colors */
   --Pure_white: #ffffff;
+}
+
+h1{
+  font-size: 88px;
+  font-family: garamond;
+  font-weight: bold;
+  line-height: 150%;
+}
+
+h2{
+  font-size: 36px;
+  font-family: garamond;
+  font-weight: bold;
+}
+
+h3{
+  font-size: 48px;
+  font-family: garamond;
+  font-weight: medium;
+}
+
+p{
+  font-size: 24px;
+  font-family: garamond;
+}
+
+
+@font-face {
+  font-family: garamond;
+  src: url(../fonts/fonts/EBGaramond-VariableFont_wght.woff2);
 }
