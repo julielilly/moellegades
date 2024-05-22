@@ -7,20 +7,24 @@
 <section class="grid_nyhedsbrev">
   <h4>Tilmeld dig vores nyhedsbrev</h4>
   <article class="tilmeldbrev">
-    <p class="input">Fornavn</p><hr class="inputline" /><p class="input">
-      E-mail
-    </p><hr class="inputline" /><p class="input">Efternavn</p><hr
-      class="inputline"
-    /><p class="submit">Submit</p>
+    <div class="inputspace">
+      <p class="input">Fornavn</p><hr class="inputline" />
+    </div><div class="inputspace">
+      <p class="input">E-mail</p><hr class="inputline" />
+    </div><div class="inputspace">
+      <p class="input">Efternavn</p><hr class="inputline" />
+    </div><div>
+      <p class="submit">Submit</p>
+    </div>
   </article>
 </section>
 
 <hr />
 
-<section>
+<section class="grid1_1">
   <article>
     <h4>Boghandlen</h4>
-    <article>
+    <article class="grid1_1">
       <div>
         <p>Møllegade 8A, 2200 København N</p>
         <p>info@moellegadesboghandel.dk</p>
@@ -42,9 +46,6 @@
       <img class="logo" src="/img/logo_1.svg" alt="" />
     </article>
   </article>
-</section>
-<hr />
-<section>
   <article>
     <h4>Forlaget</h4>
     <p>Forlaget kan kontaktes på</p>
@@ -62,15 +63,36 @@
 </section>
 
 <style>
-  section {
-    padding: 5%;
-  }
-  .sociale_medier img {
-    margin-right: 30px;
-  }
+  /*layout*/
 
   .submit {
     margin-top: 18px;
+  }
+  section {
+    padding: 5%;
+  }
+
+  .inputline {
+    width: 400px;
+  }
+
+  .input {
+    color: #737373;
+    margin-top: 18px;
+  }
+
+  .inputspace {
+    margin-right: 40px;
+  }
+
+  h4 {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+
+  /*logo + sociale medie links*/
+  .sociale_medier img {
+    margin-right: 30px;
   }
 
   .linkslogo {
@@ -80,22 +102,34 @@
     align-items: center;
   }
 
-  .inputline {
-    width: 400px;
-  }
-
   .logo {
     justify-self: end;
     width: 90px;
   }
 
-  .input {
-    color: #737373;
-    margin-top: 18px;
-  }
-
-  h4 {
-    margin-top: 12px;
-    margin-bottom: 12px;
+  /*mediaquerrieie*/
+  @media only screen and (min-width: 600px) {
+    .grid1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      border-right: 1px solid #000;
+    }
+    .grid_nyhedsbrev {
+      display: flex;
+    }
+    .tilmeldbrev {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .inputline {
+      width: 200px;
+    }
+    .inputspace {
+      margin-left: 10px;
+    }
+    .submit {
+      justify-self: end;
+    }
   }
 </style>
