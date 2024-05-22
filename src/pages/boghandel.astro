@@ -67,12 +67,6 @@ import Layout from "../layouts/Layout.astro";
 </Layout>
 
 <style>
-  #grid1-1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: auto auto;
-  }
-
   #tid {
     padding-top: 30rem;
     text-align: right;
@@ -85,5 +79,25 @@ import Layout from "../layouts/Layout.astro";
     font-size: 3rem;
     padding: 1rem;
     font-weight: bold;
+  }
+
+  img {
+    max-width: 100%;
+    padding-left: 17rem;
+    padding-top: 13rem;
+  }
+
+  #grid1-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  @media only screen and (min-width: 600px) {
+    main {
+      padding: 14rem 8rem;
+    }
+    #grid1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>

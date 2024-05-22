@@ -57,8 +57,7 @@ import Layout from "../layouts/Layout.astro";
 <style>
   #grid1-1 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr;
   }
 
   h1 {
@@ -74,5 +73,14 @@ import Layout from "../layouts/Layout.astro";
   p {
     padding: 10px;
     margin: 30px;
+  }
+
+  @media only screen and (min-width: 600px) {
+    main {
+      padding: 14rem 8rem;
+    }
+    #grid1-1 {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
