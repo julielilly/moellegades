@@ -31,32 +31,25 @@
 
 <script>
     //find elementer
-    const books = document.querySelectorAll(".book")
+    const books = document.querySelectorAll('.book')
     console.log(books)
 
-    const infoBoxes = document.querySelectorAll(".info_box")
+    const infoBoxes = document.querySelectorAll('.info_box')
     console.log(infoBoxes)
 
-    books.classList.add("hidden")
+    //gemmer infoBoxes
+    books.classList.add('hidden')
 
 
     //start funktion ved scroll
-    window.addEventListener('click', showTextbox);
+    books.addEventListener('click', showTextbox);
 
     //funktion til scroll
     function showTextbox() {
 
             //find de enkelte circles 
             books.forEach(book => {
-                    const circleTop = circle.getBoundingClientRect().top;
-                    const circleBottom = circle.getBoundingClientRect().bottom;
-                    const circleHeight = circle.getBoundingClientRect().height;
-
-
-                    console.log({ circle, circleTop });
-                    console.log({ circle, circleBottom });
-
-                    //hvis toppen af cirklen kommer op forbi bunden af vinduet, trigger animation
+                infoBoxes.classList.remove("hidden")
 
             });
 
