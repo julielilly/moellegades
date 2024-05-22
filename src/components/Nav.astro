@@ -3,7 +3,21 @@
 ---
 
 <nav>
-    <ul>
+     <ul id="mobile">
+        <img class="logo" src="/img/logo_1.svg" alt="logo">
+        <img class="burger" src="/img/burger_open.svg" alt="burgermenu">
+        <img class="hidden burger" src="/img/burger_closed.svg" alt="burgermenu">
+    </ul>
+    <ul id="menu" class="hidden">
+        <li><a href="/">Forside</a></li>
+        <li><a href="/kalender/">Kalender</a></li>
+        <li><a href="/forlag/">Forlag</a></li>
+        <li><a href="/boghandel/">Boghandlen</a></li>
+        <li><a href="/podcast/">Podcast</a></li>
+        <li><a href="/udlejning/">Udlejning</a></li>
+    </ul>
+
+    <ul id="desktop">
         <li><a href="/">Forside</a></li>
         <li><a href="/kalender/">Kalender</a></li>
         <li><a href="/forlag/">Forlag</a></li>
@@ -12,3 +26,34 @@
         <li><a href="/udlejning/">Udlejning</a></li>
     </ul>
 </nav>
+
+<style>
+
+.hidden {
+    display: none;
+}
+
+#mobile, #desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    position: fixed;
+    background-color: var(--ren_hvid);
+    width: 100%;
+}
+
+.logo {
+    width: 60px;
+}
+.burger {
+    height: 40px;
+}
+@media only screen and (max-width: 600px) {
+  #desktop{
+    display: none;
+  }
+}
+
+</style>
