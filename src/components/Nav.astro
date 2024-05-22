@@ -29,11 +29,11 @@
 
     <ul id="desktop">
         <li><a href="/"><img src="/img/logo_1.svg" alt="logo"></a></li>
-        <li><a href="/kalender/">Kalender</a></li>
-        <li><a href="/forlag/">Forlag</a></li>
-        <li><a href="/boghandel/">Boghandlen</a></li>
-        <li><a href="/podcast/">Podcast</a></li>
-        <li><a href="/udlejning/">Udlejning</a></li>
+        <li><a class="nav" id="kalender" href="/kalender/">Kalender</a></li>
+        <li><a class="nav" id="forlag" href="/forlag/">Forlag</a></li>
+        <li><a class="nav" id="boghandel" href="/boghandel/">Boghandlen</a></li>
+        <li><a class="nav" id="podcast" href="/podcast/">Podcast</a></li>
+        <li><a class="nav" id="udlejning" href="/udlejning/">Udlejning</a></li>
     </ul>
 
     <script>
@@ -41,59 +41,75 @@
         const burgerLines = document.querySelectorAll('.burger_line');
         const paths = document.querySelectorAll('path');
         const menu = document.querySelector('#menu');
+        const navItems = document.querySelectorAll('.nav');
     
-        window.addEventListener("load", sidenVises);
+        window.addEventListener('load', sidenVises);
 
         function sidenVises() {
             console.log(sidenVises);
-    
-            //skjuler menu
-            menu.classList.add('hidden');
-            
-    
+
             //sætter klik på burger knap
             burger.addEventListener("click", toggleMenu);
 
+            setupNavbar();
         }
+
 
         function toggleMenu() {
-            console.log(toggleMenu);
+            // ! = reverse statement
+            if(!menu.classList.contains('open')) {
+                burgerLines.forEach(line => {
+                    line.style.animation = "tilt 0.5s linear forwards"
+                })
+                paths.forEach(path => {
+                    path.style.animation = "color 0.5s linear forwards"
+                })
 
-            burgerLines.forEach(line => {
-                line.style.animation = "tilt 0.5s linear forwards"
-            })
-            paths.forEach(path => {
-                path.style.animation = "color 0.5s linear forwards"
-            })
+                //viser menu med animation
+                menu.classList.remove('hidden');
 
-            //viser menu med animation
-            menu.classList.remove('hidden');
-            menu.style.animation = "swipe 0.5s linear forwards"
+            
+                menu.classList.add('open');
+                menu.style.animation = "swipe 0.5s linear forwards"
+            }
+            else {
+                burgerLines.forEach(line => {
+                    line.style.animation = "straighten 0.5s linear forwards"
+                })
+                paths.forEach(path => {
+                    path.style.animation = "reColor 0.5s linear forwards"
+                })
 
-            //sætter klik på burgerClosed
-            burger.addEventListener('click', closeMenu);
+               
+                //starter lukke animation
+                menu.style.animation = "swipe_away 0.5s linear forwards"
+
+                menu.classList.remove('open');
+            }
+
+
         }
 
-        function closeMenu() {
-            console.log(closeMenu);
-            
-            burgerLines.forEach(line => {
-                line.style.animation = "straighten 0.5s linear forwards"
-            })
-            paths.forEach(path => {
-                path.style.animation = "reColor 0.5s linear forwards"
-            })
+        function setupNavbar() {
 
-            //starter lukke animation
-            menu.style.animation = "swipe_away 0.5s linear forwards"
-
-            menu.addEventListener("animationend", sidenVises);
+            navItems.forEach(item => {
+console.log(item)
+                console.log(item.id)
+                if (window.location.href.includes(item.id)) {
+                item.classList.add('current_nav');
+  }
+                
+            });
         }
     
     </script>
 </nav>
 
 <style>
+
+.current_nav {
+    color: var(--lov_gron);
+}
 
 .hidden {
     display: none !important;
@@ -176,7 +192,7 @@ img {
 }
 
 @media only screen and (min-width: 600px) {
-    #mobile, menu{
+    #mobile, #menu{
     display: none;
   }
 }
