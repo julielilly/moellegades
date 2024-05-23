@@ -6,17 +6,47 @@
 
 <section class="grid_nyhedsbrev">
   <h4>Tilmeld dig vores nyhedsbrev</h4>
-  <article class="tilmeldbrev">
+  <form
+    class="tilmeldbrev"
+    name="Contact"
+    data-netlify="true"
+    method="POST"
+    action="/submit_form"
+  >
     <div class="inputspace">
-      <p class="input">Fornavn</p><hr class="inputline" />
-    </div><div class="inputspace">
-      <p class="input">E-mail</p><hr class="inputline" />
-    </div><div class="inputspace">
-      <p class="input">Efternavn</p><hr class="inputline" />
-    </div><div>
-      <p class="submit">Submit</p>
+      <input
+        type="text"
+        id="fornavn"
+        name="fornavn"
+        placeholder="Fornavn"
+        required
+      />
+      <hr class="inputline" />
     </div>
-  </article>
+    <div class="inputspace">
+      <input
+        type="text"
+        id="efternavn"
+        name="efternavn"
+        placeholder="Efternavn"
+        required
+      />
+      <hr class="inputline" />
+    </div>
+    <div class="inputspace">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="E-mail"
+        required
+      />
+      <hr class="inputline" />
+    </div>
+    <div>
+      <button type="submit" class="submit">Submit</button>
+    </div>
+  </form>
 </section>
 
 <hr />
@@ -65,11 +95,59 @@
 </section>
 
 <style>
-  /*layout*/
+  /* Layout */
+  input::placeholder {
+    font-family: maitree, serif;
+    font-size: 16px;
+  }
+
+  .inputspace {
+    position: relative;
+    margin-right: 40px;
+    margin-top: 20px;
+  }
+
+  .input {
+    color: #737373;
+    margin-top: 18px;
+    padding: 0 5px;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    font-size: 14px;
+  }
+
+  .inputspace input {
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    width: 150px;
+  }
+
+  .inputspace hr {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #000;
+  }
 
   .submit {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    font-family: maitree, serif;
+    font-size: 18px;
     margin-top: 18px;
   }
+
+  .submit:hover {
+    color: var(--solskind_orange);
+    transition: color 0.3s ease;
+  }
+
   section {
     padding: 5%;
   }
@@ -78,21 +156,15 @@
     width: 400px;
   }
 
-  .input {
-    color: #737373;
-    margin-top: 18px;
-  }
-
-  .inputspace {
-    margin-right: 40px;
-  }
-
   h4 {
     margin-top: 12px;
     margin-bottom: 12px;
+    margin-right: 50px;
+    padding: 0;
+    width: 100%;
   }
 
-  /*logo + sociale medie links*/
+  /* Logo + Social Media Links */
   .sociale_medier img {
     margin-right: 30px;
   }
@@ -108,10 +180,12 @@
     justify-self: end;
     width: 90px;
   }
+
   #linebetween {
     display: none;
   }
-  /*mediaquerrieie*/
+
+  /* Media Queries */
   @media only screen and (min-width: 600px) {
     .grid1_1 {
       display: grid;
@@ -128,22 +202,30 @@
     .grid_nyhedsbrev {
       display: flex;
     }
+
     .tilmeldbrev {
-      display: grid;
+      display: flex;
+      align-items: center;
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
+
     .inputline {
       width: 200px;
     }
+
     .inputspace {
       margin-left: 10px;
+      margin-right: 20px;
     }
+
     .submit {
       justify-self: end;
     }
+
     .inbetweenline {
       display: none;
     }
+
     #linebetween {
       display: block;
       background-color: #737373;
