@@ -46,7 +46,8 @@
       <img class="logo" src="/img/logo_1.svg" alt="" />
     </article>
   </article>
-  <hr />
+  <div id="linebetween"></div>
+  <hr class="inbetweenline" />
   <article>
     <h4>Forlaget</h4>
     <p>Forlaget kan kontaktes på</p>
@@ -65,11 +66,7 @@
 
 <style>
   /*layout*/
-  hr {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-  }
+
   .submit {
     margin-top: 18px;
   }
@@ -111,7 +108,9 @@
     justify-self: end;
     width: 90px;
   }
-
+  #linebetween {
+    display: none;
+  }
   /*mediaquerrieie*/
   @media only screen and (min-width: 600px) {
     .grid1_1 {
@@ -122,8 +121,8 @@
 
     .grid1_linje_1 {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10rem;
+      grid-template-columns: 10fr 1fr 10fr;
+      gap: 0;
     }
 
     .grid_nyhedsbrev {
@@ -141,6 +140,17 @@
     }
     .submit {
       justify-self: end;
+    }
+    .inbetweenline {
+      display: none;
+    }
+    #linebetween {
+      display: block;
+      background-color: #737373;
+      width: 0.4px;
+      justify-self: center;
+      margin: 0;
+      padding: 0;
     }
   }
 </style>
