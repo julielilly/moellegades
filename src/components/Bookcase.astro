@@ -42,11 +42,16 @@
             // function, der sætter display = none på alle elementer på siden, der kommer efter enhver bog
             books.forEach(function(element) {
                 element.nextElementSibling.style.display = "none";
+
+                element.style.display = "block";
             });
 
             // sætter elementet efter den bog, der er blevet trykket på (det ved den fra 'click' functionen) til at have display = block, så det bliver synligt
             const panel = this.nextElementSibling;
             panel.style.display = "block";
+
+            //
+            this.style.display = "none";
         });
     });
 
@@ -68,6 +73,8 @@
         background-color: grey;
         display: none;
     }
+
+    @keyframe 
 
 
 </style>
