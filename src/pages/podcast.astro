@@ -7,12 +7,14 @@ import PodcastSection from "../components/PodcastSection.astro";
 
 <Layout>
     <h1>Podcast</h1>
-    <div class="podcast_intro">
+    <div class="top_section">
+        <div class="podcast_intro">
         <p>Møllegades Boghandel Podcast er en podcastserie om litteratur lavet  af de frivillige i Møllegades Boghandel. Podcasten ønsker at skabe et  digitalt rum for litteraturen, hvor vi især har fokus på forfattere  fra de mindre forlag. Der vil både være klassiske interviews med  aktuelle forfattere samt oplæsninger, filosofiske debatter,  sprogperformances, kritikersaloner, forfatterportrætter mv. Formaterne  fra tidligere initiativer i Møllegades Boghandel såsom Kritikersalon og  Fredagsfilosofi i Møllegade overføres og fortsætter i podcasten.</p>
         <p>Podcasten vil afspejle den forskellighed som Møllegades Boghandel rummer. Det er ikke den/de samme frivillige, der  kommer til at tale/interviewe hver gang. Podcasten er en forlængelse af  boghandlen, hvor der kontinuerligt vil blive lavet nye podcasts af  frivilliggruppen. Vi håber, at podcasten kan afspejle den variation som  Møllegades Boghandel rummer af frivillige.</p>
         <p>Møllegades Boghandels Podcast er støtte af Statens Kunstfond.</p>
+        </div>
+        <a href="https://www.kunst.dk/" target="_blank"><img src="/img/sk_icon.svg" alt="link til statens kunstfond"></a>
     </div>
-    <a href="https://www.kunst.dk/" target="_blank"><img src="/img/sk_icon.svg" alt="link til statens kunstfond"></a>
     <PodcastSection episode="S1E1" title="Debuten" textOne="Denne første episode handler om at debutere, og derfor har vi inviteret Rasmus Daugbjerg og Cæsilie Højbjerg Poulsen ind til en snak om deres debut, som udkommer på Forlaget Møllegades Boghandel under debutantserien Æra. Rasmus er uskommet med kortromanen Rygtet, som omhandler et du, der flytter til en navnløs by, hvorefter rygterne begynder at sprede sig. Cæcilie udkommer med sin bog i sommeren 2021, som er en digtsamling om omsorrgsarbejde og opvæksten i en kristen tradition. I episoden bliver den kaldt Hun om nogen, men titlen er endnu ikke fastlagt. Vi har blandt andet talt med dem om processen og de udfordringer de har oplevet undervejs, hvornår de vidste at det de skrev på skulle blive til en bog og hvilke følelser der er forbundet med udgivelsen." textTwo="Tilrettelæggelse og interview af Clara Busch Madsen og Maria Stokkedal Hundahl." textThree="Produceret af Yasmina Nedjoua, Kamilla Ane Peterson, Clara Busch Madsen og Maria Stokkedal Hundahl." textFour="Musik af Vilhelm Tiburtz Strange." textFive="Billede af Anna Hanhøj Iversen" src="https://open.spotify.com/embed/episode/4EJZHoRwVw5aEy8KgDGQeS?utm_source=generator"/>
     <PodcastSection episode="S1E2" title="Om Udregning af Rumfang" textOne="Camus gjorde det. Sartre gjorde det. Bataille gjorde det: Udfoldede deres filosofi via skønlitterære værker. Men hvordan taler filosofi og skønlitteratur sammen? Og hvilke mulighedsrum indeholder skønlitteraturen? I denne anden episode har vi inviteret dr. phil. Anne Elisabeth Sejten til en samtale med forfatter Solvej Balle. Sammen taler vi om Solvejs bøger i septologien ’Om udregning af rumfang’. Solvejs bøger tænker i høj grad og via en læsning af og samtale om disse bliver vi i høj grad klogere på litteraturens potentiale ift. forståelsen af filosofiske emner."  textTwo="Tilrettelæggelse og interview af Kamilla Ane Petersen." textThree="Produceret af Yasmina Nedjoua, Kamilla Ane Petersen, Clara Busch Madsen og Maria Stokkendal Hundahl." textFour="Musik af Vilhelm Tiburtz Strange." textFive="Billede af Thomas Brorholm." src="https://open.spotify.com/embed/episode/0y1UpEoF9SoqPWdcUJ0FIy?utm_source=generator" />
     <PodcastSection episode="S1E3" title="KRITIKERSALON – Om Emili Bergmans ‘På undersiden af dagen’ og Cecilie Højberg Poulsens ‘om nogen’" textOne="Kritikersalon i Møllegades Boghandel den 13. oktober 2021. Kritikerne Benedicte Gui de Thurah Huang og Felix Thorsen Katzenelson har inviteret gæstekritikerne Sigrid Adamsson og Nicklas Freisleben Lund. Sammen taler de om bøgerne “På undersiden af dagen” af Emeli Bergman og “om nogen” af Cæcilie Højberg Poulsen, begge udgivet 2021." textTwo="Kritikersalonerne er skabt af Mathilde Moestrup, Felix Thorsen Katzenelson og Benedicte Gui de Thurah Huang." textThree="Podcasten er produceret af Yasmina Nedjoua, Kamilla Ane Petersen, Clara Busch Madsen og Maria Stokkendal Hundahl." textFour="Musik af Vilhelm Tiburtz Strange." textFive="Møllegades Boghandels Podcast er støttet af Statens Kunstfond." src="https://open.spotify.com/embed/episode/5jIouAbUBicHprtczDqYTE?utm_source=generator"/>
@@ -22,5 +24,26 @@ import PodcastSection from "../components/PodcastSection.astro";
 </Layout>
 
 <style>
+    .podcast_intro, .top_section {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: 20px;
+    }
+    a {
+        text-align: end;
+    }
+
+    
+
+
+    @media only screen and (min-width: 700px) {
+    .top_section {
+        flex-direction: row;
+        align-items: end;
+    }
+    .podcast_intro {
+        width: 60%;
+    }
 
 </style>
