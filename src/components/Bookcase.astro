@@ -7,23 +7,25 @@
     <template id="template">
         <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
         <div  class="panel">
-            <img class="image" src="/img/omnogen.png" alt="bog">
-            <div class="text">
-                <h3 class="title">om nogen</h3>
-                <p class="author">Cæcilie Højberg Poulsen</p>
-                <div class="about">
-                    <div>
-                        <p class="section_1">En digtsamling af Cæcilie Højberg Poulsen. Cæcilie Højberg Poulsen (f. 1990).Har læst Kunsthistorie og er uddannet fra Forfatterskolen i 2015.</p>
-                        <p class="section_2">om nogen er hendes debut og er en digtsamling om arbejde og forhold. Rum bygges op, og relationer spændes ud mellem et jeg og demennesker, der bevæger sig ind og ud adrummene: et du, en forælder, søstre, enoverordnet, et barn, der ikke vil lade sigbabysitte. Digtene handler om og skriveromhyggelighed, opmærksomhed ogberøringer frem i møder, der vekselvirkermellem omsorg og trods.</p>
-                        <p class="section_3">Omslaget er illustreret af Hedvig KoertzMikkelsen.</p>
-                    </div>
-                    <hr class="linebreak">
-                    <div>
-                        <p>Antal sider: <span class="pages">72</span></p>
-                        <p>Pris: <span class="price">200 kr</span></p>
-                        <p>ISBN: <span class="isbn">9788797128725</span></p>
-                        <p>Udgivelsesdato: <span class="date">14/10/2021</span></p>
-                        <p class="series">om nogen er anden udgivelse i serien Æra, en serie for debutanter på Forlaget Møllegades Boghandel</p>
+            <div class="container">
+                <img class="image" src="/img/omnogen.png" alt="bog">
+                <div class="text">
+                    <h3 class="title">om nogen</h3>
+                    <p class="author">Cæcilie Højberg Poulsen</p>
+                    <div class="about">
+                        <div>
+                            <p class="section_1">En digtsamling af Cæcilie Højberg Poulsen. Cæcilie Højberg Poulsen (f. 1990).Har læst Kunsthistorie og er uddannet fra Forfatterskolen i 2015.</p>
+                            <p class="section_2">om nogen er hendes debut og er en digtsamling om arbejde og forhold. Rum bygges op, og relationer spændes ud mellem et jeg og demennesker, der bevæger sig ind og ud adrummene: et du, en forælder, søstre, enoverordnet, et barn, der ikke vil lade sigbabysitte. Digtene handler om og skriveromhyggelighed, opmærksomhed ogberøringer frem i møder, der vekselvirkermellem omsorg og trods.</p>
+                            <p class="section_3">Omslaget er illustreret af Hedvig KoertzMikkelsen.</p>
+                        </div>
+                        <hr class="linebreak">
+                        <div>
+                            <p>Antal sider: <span class="pages">72</span></p>
+                            <p>Pris: <span class="price">200 kr</span></p>
+                            <p>ISBN: <span class="isbn">9788797128725</span></p>
+                            <p>Udgivelsesdato: <span class="date">14/10/2021</span></p>
+                            <p class="series">om nogen er anden udgivelse i serien Æra, en serie for debutanter på Forlaget Møllegades Boghandel</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -134,10 +136,9 @@
     #bookcase {
         display: flex;
         justify-content: center;
-        width: 80vw;
         margin: auto;
-        height: 80vh;
         overflow: hidden;
+        height: 600px;
     }
 
     .book {
@@ -147,15 +148,13 @@
     
 
     .panel {
-        background-color: grey;
         display: none;
         z-index: -1;
-        overflow: hidden;
         transition: 2s;
     }
 
     .panel {
-    animation: swipe_left 0.5s linear;
+        animation: swipe_left 0.5s linear;
     }
 
     @keyframes swipe_left {
@@ -174,8 +173,37 @@
     }
 
     .image {
-        height: 50%;
+        height: 400px;
     }
 
+    .container {
+        display: flex;
+        justify-content: space-between;
+        margin: 10%;
+        gap: 10%;
+
+        height: 100%;
+        width: 70%;
+
+    }
+    .text {
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .title {
+        padding: 0;
+    }
+    .author {
+        padding: 10px 0 30px 0;
+    }
+
+    .about {
+        height: 100%;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 
 </style>
