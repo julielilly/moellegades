@@ -137,18 +137,21 @@
         width: 80vw;
         margin: auto;
         height: 80vh;
+        overflow: hidden;
     }
 
     .book {
         transition: 2s;
         cursor: pointer;
     }
+    
 
     .panel {
         background-color: grey;
         display: none;
         z-index: -1;
         overflow: hidden;
+        transition: 2s;
     }
 
     .panel {
@@ -156,12 +159,22 @@
     }
 
     @keyframes swipe_left {
-        0%   {transform: translateX(50%);}
+        0%   {transform: translateX(100px);}
         100% {transform: translateX(0);}
     }
     @keyframes swipe_right {
         0%   {transform: translateX(0);}
         100% {transform: translateX(600px);}
+    }
+
+    hr {
+        border: 1px solid black;
+        width: 50px;
+        margin: 20px;
+    }
+
+    .image {
+        height: 50%;
     }
 
 
