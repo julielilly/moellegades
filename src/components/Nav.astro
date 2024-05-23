@@ -3,124 +3,147 @@
 ---
 
 <nav>
-     <ul id="mobile">
-        <a href="/"> <img class="logo" src="/img/logo_1.svg" alt="logo"></a>
-        <div class="burger">
-            <svg class="burger_line line1" width="3" height="23" viewBox="0 0 3 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M0.893827 22.0174L0.94239 0.350818L2.94238 0.356079L2.89382 22.0227L0.893827 22.0174Z" fill="black"/>
-                </svg>
-            <svg class="burger_line line2" width="3" height="16" viewBox="0 0 3 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.943051 15.0375L0.974616 0.954212L2.97461 0.959473L2.94304 15.0428L0.943051 15.0375Z" fill="black"/>
-                    </svg>
-                    
-            <svg class="burger_line line3" width="4" height="29" viewBox="0 0 4 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0.97446 28.056L1.03516 0.972766L3.03516 0.978027L2.97445 28.0613L0.97446 28.056Z" fill="black"/>
-                        </svg>
-        </div>
-    </ul>
-    <ul id="menu" class="hidden">
-        <li><img src="/img/books.svg" alt=""></li>
-        <li><a href="/kalender/">Kalender</a></li>
-        <li><a href="/forlag/">Forlag</a></li>
-        <li><a href="/boghandel/">Boghandlen</a></li>
-        <li><a href="/podcast/">Podcast</a></li>
-        <li><a href="/udlejning/">Udlejning</a></li>
-    </ul>
+  <ul id="mobile">
+    <a href="/"> <img class="logo" src="/img/logo_1.svg" alt="logo" /></a>
+    <div class="burger">
+      <svg
+        class="burger_line line1"
+        width="3"
+        height="23"
+        viewBox="0 0 3 23"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0.893827 22.0174L0.94239 0.350818L2.94238 0.356079L2.89382 22.0227L0.893827 22.0174Z"
+          fill="black"></path>
+      </svg>
+      <svg
+        class="burger_line line2"
+        width="3"
+        height="16"
+        viewBox="0 0 3 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0.943051 15.0375L0.974616 0.954212L2.97461 0.959473L2.94304 15.0428L0.943051 15.0375Z"
+          fill="black"></path>
+      </svg>
 
-    <ul id="desktop">
-        <li><a href="/"><img src="/img/logo_1.svg" alt="logo"></a></li>
-        <li><a class="nav" id="kalender" href="/kalender/">Kalender</a></li>
-        <li><a class="nav" id="forlag" href="/forlag/">Forlag</a></li>
-        <li><a class="nav" id="boghandel" href="/boghandel/">Boghandlen</a></li>
-        <li><a class="nav" id="podcast" href="/podcast/">Podcast</a></li>
-        <li><a class="nav" id="udlejning" href="/udlejning/">Udlejning</a></li>
-    </ul>
+      <svg
+        class="burger_line line3"
+        width="4"
+        height="29"
+        viewBox="0 0 4 29"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M0.97446 28.056L1.03516 0.972766L3.03516 0.978027L2.97445 28.0613L0.97446 28.056Z"
+          fill="black"></path>
+      </svg>
+    </div>
+  </ul>
+  <ul id="menu" class="hidden">
+    <li><img src="/img/books.svg" alt="" /></li>
+    <li><a href="/kalender/">Kalender</a></li>
+    <li><a href="/forlag/">Forlag</a></li>
+    <li><a href="/boghandel/">Boghandlen</a></li>
+    <li><a href="/podcast/">Podcast</a></li>
+    <li><a href="/udlejning/">Udlejning</a></li>
+  </ul>
 
-    <script>
-        const burger = document.querySelector('.burger');
-        const burgerLines = document.querySelectorAll('.burger_line');
-        const paths = document.querySelectorAll('path');
-        const menu = document.querySelector('#menu');
-        const navItems = document.querySelectorAll('.nav');
-    
-        window.addEventListener('load', sidenVises);
+  <ul id="desktop">
+    <li><a href="/"><img src="/img/logo_1.svg" alt="logo" /></a></li>
+    <li><a class="nav" id="kalender" href="/kalender/">Kalender</a></li>
+    <li><a class="nav" id="forlag" href="/forlag/">Forlag</a></li>
+    <li><a class="nav" id="boghandel" href="/boghandel/">Boghandlen</a></li>
+    <li><a class="nav" id="podcast" href="/podcast/">Podcast</a></li>
+    <li><a class="nav" id="udlejning" href="/udlejning/">Udlejning</a></li>
+  </ul>
 
-        function sidenVises() {
-            console.log(sidenVises);
+  <script>
+    const burger = document.querySelector(".burger");
+    const burgerLines = document.querySelectorAll(".burger_line");
+    const paths = document.querySelectorAll("path");
+    const menu = document.querySelector("#menu");
+    const navItems = document.querySelectorAll(".nav");
 
-            //sætter klik på burger knap
-            burger.addEventListener("click", toggleMenu);
+    window.addEventListener("load", sidenVises);
 
-            setupNavbar();
+    function sidenVises() {
+      console.log(sidenVises);
+
+      //sætter klik på burger knap
+      burger.addEventListener("click", toggleMenu);
+
+      setupNavbar();
+    }
+
+    function toggleMenu() {
+      // ! = reverse statement
+      if (!menu.classList.contains("open")) {
+        burgerLines.forEach((line) => {
+          line.style.animation = "tilt 0.5s linear forwards";
+        });
+        paths.forEach((path) => {
+          path.style.animation = "color 0.5s linear forwards";
+        });
+
+        //viser menu med animation
+        menu.classList.remove("hidden");
+
+        menu.classList.add("open");
+        menu.style.animation = "swipe 0.5s linear forwards";
+      } else {
+        burgerLines.forEach((line) => {
+          line.style.animation = "straighten 0.5s linear forwards";
+        });
+        paths.forEach((path) => {
+          path.style.animation = "reColor 0.5s linear forwards";
+        });
+
+        //starter lukke animation
+        menu.style.animation = "swipe_away 0.5s linear forwards";
+
+        menu.classList.remove("open");
+      }
+    }
+
+    function setupNavbar() {
+      navItems.forEach((item) => {
+        console.log(item);
+        console.log(item.id);
+        if (window.location.href.includes(item.id)) {
+          item.classList.add("current_nav");
         }
-
-
-        function toggleMenu() {
-            // ! = reverse statement
-            if(!menu.classList.contains('open')) {
-                burgerLines.forEach(line => {
-                    line.style.animation = "tilt 0.5s linear forwards"
-                })
-                paths.forEach(path => {
-                    path.style.animation = "color 0.5s linear forwards"
-                })
-
-                //viser menu med animation
-                menu.classList.remove('hidden');
-
-            
-                menu.classList.add('open');
-                menu.style.animation = "swipe 0.5s linear forwards"
-            }
-            else {
-                burgerLines.forEach(line => {
-                    line.style.animation = "straighten 0.5s linear forwards"
-                })
-                paths.forEach(path => {
-                    path.style.animation = "reColor 0.5s linear forwards"
-                })
-
-               
-                //starter lukke animation
-                menu.style.animation = "swipe_away 0.5s linear forwards"
-
-                menu.classList.remove('open');
-            }
-
-
-        }
-
-        function setupNavbar() {
-
-            navItems.forEach(item => {
-console.log(item)
-                console.log(item.id)
-                if (window.location.href.includes(item.id)) {
-                item.classList.add('current_nav');
-  }
-                
-            });
-        }
-    
-    </script>
+      });
+    }
+  </script>
 </nav>
 
 <style>
-
-.current_nav {
+  .current_nav {
     color: var(--lov_gron);
-}
+  }
 
-.hidden {
+  .hidden {
     display: none !important;
-}
+  }
 
-img {
+  img {
     width: 50px;
-}
+  }
 
-
-#mobile, #desktop {
+  #mobile,
+  #desktop {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -129,13 +152,14 @@ img {
     position: fixed;
     background-color: var(--ren_hvid);
     width: 100%;
-}
+    border-bottom: 0.5px solid #000;
+  }
 
-#desktop {
-    padding: 3rem;
-}
+  #desktop {
+    padding: 1rem;
+  }
 
-#menu {
+  #menu {
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -147,56 +171,77 @@ img {
     padding: 2rem;
     height: 90vh;
     animation: swipe 0.5s linear;
-}
+  }
 
-.burger_line {
+  .burger_line {
     transform-origin: bottom;
-}
+  }
 
+  @keyframes swipe {
+    0% {
+      transform: translateX(600px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes swipe_away {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(600px);
+    }
+  }
+  @keyframes tilt {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(-45deg);
+    }
+  }
+  @keyframes straighten {
+    0% {
+      transform: rotate(-45deg);
+    }
+    100% {
+      transform: rotate(0);
+    }
+  }
+  @keyframes color {
+    0% {
+      fill: var(--natte_sort);
+    }
+    100% {
+      fill: var(--lov_gron);
+    }
+  }
+  @keyframes reColor {
+    0% {
+      fill: var(--lov_gron);
+    }
+    100% {
+      fill: var(--natte_sort);
+    }
+  }
 
-@keyframes swipe {
-  0%   {transform: translateX(600px);}
-  100% {transform: translateX(0);}
-}
-@keyframes swipe_away {
-  0%   {transform: translateX(0);}
-  100% {transform: translateX(600px);}
-}
-@keyframes tilt {
-  0%   {transform: rotate(0) ;}
-  100% {transform: rotate(-45deg) ;}
-}
-@keyframes straighten {
-  0%   {transform: rotate(-45deg);}
-  100% {transform: rotate(0) ;}
-}
-@keyframes color {
-  0%   {fill: var(--natte_sort) ;}
-  100% {fill: var(--lov_gron) ;}
-}
-@keyframes reColor {
-  0%   {fill: var(--lov_gron) ;}
-  100% {fill: var(--natte_sort) ;}
-}
-
-.logo {
+  .logo {
     width: 60px;
-}
-.burger {
+  }
+  .burger {
     height: 40px;
-}
-@media only screen and (max-width: 600px) {
-  #desktop{
-    display: none;
   }
-}
-
-@media only screen and (min-width: 600px) {
-    #mobile, #menu{
-    display: none;
+  @media only screen and (max-width: 600px) {
+    #desktop {
+      display: none;
+    }
   }
-}
 
-
-
+  @media only screen and (min-width: 600px) {
+    #mobile,
+    #menu {
+      display: none;
+    }
+  }
 </style>
