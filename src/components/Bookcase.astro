@@ -30,21 +30,25 @@
 </div>
 
 <script>
-  var acc = document.getElementsByClassName("book");
-    var i;
+    // finder alle bøgerne, og sætter dem som variablen 'books'
+    const books = document.querySelectorAll(".book");
 
-    for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
+    // kører en function for hver af bøgerne
+    books.forEach(function(book) {
 
-    /* Toggle between hiding and showing the active panel */
-    var panel = this.nextElementSibling;
-    if (panel.style.display === "block") {
-      panel.style.display = "none";
-    } else {
-      panel.style.display = "block";
-    }
-  });
-}
+        // sætter klik på den specifikke bog, som så kører en funktion
+        book.addEventListener("click", function() {
+
+            // function, der sætter display = none på alle elementer på siden, der kommer efter enhver bog
+            books.forEach(function(element) {
+                element.nextElementSibling.style.display = "none";
+            });
+
+            // sætter elementet efter den bog, der er blevet trykket på (det ved den fra 'click' functionen) til at have display = block, så det bliver synligt
+            const panel = this.nextElementSibling;
+            panel.style.display = "block";
+        });
+    });
 
 </script>
 
