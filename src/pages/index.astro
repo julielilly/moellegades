@@ -18,30 +18,38 @@ import Pagelink from "../components/Pagelink.astro";
     <img id="forsidesvg" src="/img/forsideimg.svg" alt="" />
   </div>
   <section class="grid1_1">
-    <Pagelink
-      header="Lokale Udlejning"
-      text="Vi udlejer vores lokaler til reception, skriveværksted, oplæsning osv. Læs mere her."
+    <a href="src pages udlejning.astro"
+      ><Pagelink
+        header="Lokale Udlejning"
+        text="Vi udlejer vores lokaler til reception, skriveværksted, oplæsning osv. Læs mere her."
+      >
+        <img src="/img/placeholder-img.png" alt="" width="100%" />
+      </Pagelink></a
     >
-      <img src="/img/placeholder-img.png" alt="" width="100%" />
-    </Pagelink>
-    <Pagelink
-      header="Events // kalender"
-      text="Læs om vores litteraturfestival, Lyse Nætter og læs mere om vores andre kommende events."
+    <a href="/src/pages/kalender.astro"
+      ><Pagelink
+        header="Events // kalender"
+        text="Læs om vores litteraturfestival, Lyse Nætter og læs mere om vores andre kommende events."
+      >
+        <img src="/img/placeholder-img.png" alt="" width="100%" />
+      </Pagelink></a
     >
+    <a href="/src/pages/forlag.astro">
+      <Pagelink
+        header="Forlaget Møllegades Boghandel"
+        text="Læs mere om Møllegades Boghandel og vores udvalg af ny nordisk litteratur her."
+      />
+
       <img src="/img/placeholder-img.png" alt="" width="100%" />
-    </Pagelink>
-    <Pagelink
-      header="Forlaget Møllegades Boghandel"
-      text="Læs mere om Møllegades Boghandel og vores udvalg af ny nordisk litteratur her."
+    </a>
+    <a href="/src/pages/boghandel.astro"
+      ><Pagelink
+        header="Møllegades Boghandel"
+        text=" Frivilligdrevet boghandel på Nørrebro. Læs her om de forlag og tidsskrifter, vi fører."
+      >
+        <img src="/img/placeholder-img.png" alt="" width="100%" />
+      </Pagelink></a
     >
-      <img src="/img/placeholder-img.png" alt="" width="100%" />
-    </Pagelink>
-    <Pagelink
-      header="Møllegades Boghandel"
-      text=" Frivilligdrevet boghandel på Nørrebro. Læs her om de forlag og tidsskrifter, vi fører."
-    >
-      <img src="/img/placeholder-img.png" alt="" width="100%" />
-    </Pagelink>
   </section>
 </Layout>
 
@@ -50,7 +58,7 @@ import Pagelink from "../components/Pagelink.astro";
     .grid1_1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2rem;
+      gap: 3rem;
       justify-content: center;
       row-gap: 4rem;
       margin: 0;
@@ -67,6 +75,11 @@ import Pagelink from "../components/Pagelink.astro";
   }
   h1 {
     text-align: center;
+  }
+
+  a,
+  .linkpage li {
+    text-transform: none;
   }
 
   #forsidesvg {
