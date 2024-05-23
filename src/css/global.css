@@ -93,3 +93,14 @@ p {
     font-family: Arial, Helvetica, sans-serif;
   }
 }
+
+/* scrollbar */
+
+::-webkit-scrollbar {
+  height: 10px;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: #808080;
+  border-radius: 10px;
+}
