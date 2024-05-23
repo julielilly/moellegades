@@ -24,7 +24,7 @@ import Pagelink from "../components/Pagelink.astro";
     />
     <Pagelink
       header="Events // kalender"
-      text="Læs om vores litteraturfestival, Lyse Nætter og se kommende events."
+      text="Læs om vores litteraturfestival, Lyse Nætter og læs mere om vores andre kommende events."
     />
     <Pagelink
       header="Forlaget Møllegades Boghandel"
@@ -38,26 +38,36 @@ import Pagelink from "../components/Pagelink.astro";
 </Layout>
 
 <style>
-  .grid1_1 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+  @media only screen and (min-width: 600px) {
+    .grid1_1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      justify-content: center;
+      row-gap: 4rem;
+      margin: 0;
+    }
+    .middle {
+      width: 60%;
+    }
   }
-
+  .middle {
+    width: 80%;
+  }
+  .grid1_1 {
+    margin: 20px;
+  }
   h1 {
     text-align: center;
   }
 
   #forsidesvg {
-    width: 40%;
+    width: 50%;
   }
 
   .imgdiv {
     display: flex;
     justify-content: center;
     margin-bottom: 70px;
-  }
-  .middle {
-    width: 60%;
   }
 </style>

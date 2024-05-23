@@ -6,5 +6,11 @@ const text = Astro.props.text;
 <article>
   <h4>{header}</h4>
   <p>{text}</p>
-  <img src="/public/img/placeholder-img.png" alt="" width="500px" />
+  <img src="/public/img/placeholder-img.png" alt="" width="100%" />
 </article>
+
+<style>
+  article {
+    width: 100%;
+  }
+</style>
