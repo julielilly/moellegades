@@ -1,0 +1,181 @@
+---
+
+---
+
+<section id="bookcase">
+
+    <template id="template">
+        <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+        <div  class="panel">
+            <img class="image" src="/img/omnogen.png" alt="bog">
+            <div class="text">
+                <h3 class="title">om nogen</h3>
+                <p class="author">Cæcilie Højberg Poulsen</p>
+                <div class="about">
+                    <div>
+                        <p class="section_1">En digtsamling af Cæcilie Højberg Poulsen. Cæcilie Højberg Poulsen (f. 1990).Har læst Kunsthistorie og er uddannet fra Forfatterskolen i 2015.</p>
+                        <p class="section_2">om nogen er hendes debut og er en digtsamling om arbejde og forhold. Rum bygges op, og relationer spændes ud mellem et jeg og demennesker, der bevæger sig ind og ud adrummene: et du, en forælder, søstre, enoverordnet, et barn, der ikke vil lade sigbabysitte. Digtene handler om og skriveromhyggelighed, opmærksomhed ogberøringer frem i møder, der vekselvirkermellem omsorg og trods.</p>
+                        <p class="section_3">Omslaget er illustreret af Hedvig KoertzMikkelsen.</p>
+                    </div>
+                    <hr class="linebreak">
+                    <div>
+                        <p>Antal sider: <span class="pages">72</span></p>
+                        <p>Pris: <span class="price">200 kr</span></p>
+                        <p>ISBN: <span class="isbn">9788797128725</span></p>
+                        <p>Udgivelsesdato: <span class="date">14/10/2021</span></p>
+                        <p class="series">om nogen er anden udgivelse i serien Æra, en serie for debutanter på Forlaget Møllegades Boghandel</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+
+    <script>
+        // sætter variabler til databasen   
+        const url = 'https://picfaezzbcmszlbwizns.supabase.co';
+        const key = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpY2ZhZXp6YmNtc3psYndpem5zIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTU1OTMzODcsImV4cCI6MjAzMTE2OTM4N30.N5RXEMczoFW6CHMa3spovBRCid-rx8c2gZ6OQgjrHF4';
+
+        //fetcher alt databasens indhold og kører functionen showData
+        fetch(url + '/rest/v1/mollegades', {
+            method: 'GET',
+            headers: {
+                apikey: key,
+            },
+        })
+        .then((res) => res.json())
+        .then(showBooks);
+
+        function showBooks(books) {
+            //looper og kalder showCategory
+            console.log(books);
+            books.forEach(showBook);
+        }
+
+        function showBook(book) {
+            console.log(book);
+
+            //fang template
+            const template = document.querySelector('#template').content;
+
+            //lav en kopi af template
+            const copy = template.cloneNode(true);
+
+            //ændre indhold i kopien (billed, tekst og baggrundsfarve)
+            copy.querySelector('.book').src = book.Back_image;
+            copy.querySelector('.image').src = book.Image;
+
+            copy.querySelector('.title').textContent = book.Title;
+            copy.querySelector('.author').textContent = book.Author;
+            copy.querySelector('.section_1').textContent = book.FirstSection;
+            copy.querySelector('.section_2').textContent = book.SecoundSection;
+            copy.querySelector('.section_3').textContent = book.ThirdSection;
+            copy.querySelector('.pages').textContent = book.Pages;
+            copy.querySelector('.price').textContent = book.Price;
+            copy.querySelector('.isbn').textContent = book.ISBN;
+            copy.querySelector('.date').textContent = book.Date;
+            copy.querySelector('.series').textContent = book.Series;
+
+            copy.querySelector('.panel').style.background = book.Color;
+        
+            //append kopien
+            document.querySelector('#bookcase').appendChild(copy);
+
+
+
+
+
+            //laver en variabel, der indeholder alle bøgerne (bagsiderne)
+            const books = document.querySelectorAll(".book");
+            console.log(books);
+
+            // kører en function for hver af bøgerne
+            books.forEach(function(book) {
+
+                // sætter klik på den specifikke bog, som så kører en funktion
+                book.addEventListener("click", function() {
+
+                    // function, der sætter display = none på alle elementer på siden, der kommer efter enhver bog
+                    books.forEach(function(element) {
+                        element.nextElementSibling.style.display = "none";
+
+                        // sørger for at alle bøger er vist
+                        element.style.display = "block";
+                    });
+
+                    // sætter elementet efter den bog, der er blevet trykket på (det ved den fra 'click' functionen) til at have display = block, så det bliver synligt
+                    const panel = this.nextElementSibling;
+                    panel.style.display = "block";
+
+                    // gemmer den klikkede bog
+                    this.style.display = "none";
+                });
+            });
+        }
+
+            
+        
+        
+
+       
+
+
+
+
+
+
+ 
+
+    </script>
+
+</section>
+
+<style>
+    #bookcase {
+        display: flex;
+        justify-content: center;
+        width: 80vw;
+        margin: auto;
+        height: 80vh;
+        overflow: hidden;
+    }
+
+    .book {
+        transition: 2s;
+        cursor: pointer;
+    }
+    
+
+    .panel {
+        background-color: grey;
+        display: none;
+        z-index: -1;
+        overflow: hidden;
+        transition: 2s;
+    }
+
+    .panel {
+    animation: swipe_left 0.5s linear;
+    }
+
+    @keyframes swipe_left {
+        0%   {transform: translateX(100px);}
+        100% {transform: translateX(0);}
+    }
+    @keyframes swipe_right {
+        0%   {transform: translateX(0);}
+        100% {transform: translateX(600px);}
+    }
+
+    hr {
+        border: 1px solid black;
+        width: 50px;
+        margin: 20px;
+    }
+
+    .image {
+        height: 50%;
+    }
+
+
+</style>
