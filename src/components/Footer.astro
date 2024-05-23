@@ -61,17 +61,20 @@
         <p>+45 29 90 48 86</p>
         <p>CVR: 33942219</p>
       </div>
-      <div>
+      <div id="opening">
         <p>Mandag - Lørdag 14-18</p>
-        <p>Åbningstider kan variere</p>
+        <p><em>Åbningstider kan variere</em></p>
       </div>
     </article>
     <article class="linkslogo">
       <div class="sociale_medier">
-        <img src="/img/facebook_icon.svg" alt="" /><img
-          src="/img/instagram_icon.svg"
-          alt=""
-        />
+        <a href="https://www.facebook.com/moellegades" target="_blank"
+          ><img src="/img/facebook_icon.svg" alt="" /></a
+        >
+        <a
+          href="https://www.instagram.com/moellegadesboghandel/"
+          target="_blank"><img src="/img/instagram_icon.svg" alt="" /></a
+        >
       </div>
       <img class="logo" src="/img/logo_1.svg" alt="" />
     </article>
@@ -84,10 +87,16 @@
     <p>moellegadesforlag@gmail.com</p>
     <article class="linkslogo">
       <div class="sociale_medier">
-        <img src="/img/facebook_icon.svg" alt="" /><img
-          src="/img/instagram_icon.svg"
-          alt=""
-        />
+        <a
+          href="https://www.facebook.com/profile.php?id=100064144357563"
+          target="_blank"
+        >
+          <img src="/img/facebook_icon.svg" alt="" />
+        </a>
+        <a
+          href="https://www.instagram.com/forlagetmoellegadesboghandel/"
+          target="_blank"><img src="/img/instagram_icon.svg" alt="" /></a
+        >
       </div>
       <img class="logo" src="/img/logo_2.svg" alt="" />
     </article>
@@ -192,7 +201,11 @@
     .grid1_1 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3rem;
+      gap: 2rem;
+    }
+    #opening {
+      justify-self: end;
+      margin-right: 10px;
     }
 
     .grid1_linje_1 {
