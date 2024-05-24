@@ -4,8 +4,11 @@
 
 <section id="bookcase">
 
-    <template id="template">
-        <img class="book" src="/img/OmNogen_ryg.png" alt="bog">
+    <template id="template" class="desktop">
+        <div class="book">
+            <img class="book_desktop" src="/img/OmNogen_ryg.png" alt="bog">
+            <img class="book_mobile" src="/img/OmNogen_ryg.png" alt="bog">
+        </div>
         <div  class="panel">
             <div class="container">
                 <img class="image" src="/img/omnogen.png" alt="bog">
@@ -64,8 +67,9 @@
             const copy = template.cloneNode(true);
 
             //ændre indhold i kopien (billed, tekst og baggrundsfarve)
-            copy.querySelector('.book').src = book.Back_image;
             copy.querySelector('.image').src = book.Image;
+            copy.querySelector('.book_desktop').src = book.BackImage;
+            copy.querySelector('.book_mobile').src = book.SidewayBackImage;
 
             copy.querySelector('.title').textContent = book.Title;
             copy.querySelector('.author').textContent = book.Author;
@@ -108,24 +112,13 @@
                     // sætter elementet efter den bog, der er blevet trykket på (det ved den fra 'click' functionen) til at have display = block, så det bliver synligt
                     const panel = this.nextElementSibling;
                     panel.style.display = "block";
+               /*      panel.style.transform ='translateX(340px)' */
 
                     // gemmer den klikkede bog
                     this.style.display = "none";
                 });
             });
         }
-
-            
-        
-        
-
-       
-
-
-
-
-
-
  
 
     </script>
@@ -141,22 +134,19 @@
         height: 600px;
     }
 
-    .book {
-        transition: 2s;
+    .book_desktop, .book_mobile {
         cursor: pointer;
-
         z-index: 1;
     }
     
 
     .panel {
         display: none;
-        transition: 2s;
+        height: 530px;
+        /*animation: swipe_left 1s   ;*/ 
     }
 
-    .panel {
-        animation: swipe_left 0.5s linear;
-    }
+
 
     @keyframes swipe_left {
         0%   {transform: translateX(100px);}
@@ -174,7 +164,16 @@
     }
 
     .image {
-        height: 400px;
+        height: 25vw;
+        width: fit-content;
+        
+    }
+
+    .book {
+        height: 30vw;
+    }
+    .book img {
+        width: 65px;
     }
 
     .container {
@@ -185,26 +184,71 @@
 
         height: 100%;
         width: 70%;
-
+        
     }
     .text {
-        height: 400px;
+        height: 100%;
         overflow: hidden;
     }
 
     .title {
         padding: 0;
+        font-size: 1.8rem;
     }
     .author {
         padding: 10px 0 30px 0;
     }
 
     .about {
-        height: 100%;
-        overflow: scroll;
+        height: 300px;
+        overflow-x: hidden;
+        overflow-y: scroll;
         display: flex;
         flex-direction: column;
         gap: 20px;
+    }
+    @media only screen and (min-width: 801px) {
+
+        .book_mobile {
+            display: none;
+        }
+    }
+    @media only screen and (max-width: 1200px) and (min-width: 801px){
+        .container {
+        flex-direction: column;
+        gap: 0;
+        }
+        .about {
+            height: 120px;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+
+        .book_desktop {
+            display: none;
+        }
+
+        .book {
+            height: 60px;
+        }
+        .book img{
+            transition: 0s;
+            width: 100vw;
+            height: auto;
+            padding: 0;
+            object-fit: cover;
+        }
+        #bookcase {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        padding: 0;
+        gap: 0;
+        margin: 0;
+    }
     }
 
 </style>
