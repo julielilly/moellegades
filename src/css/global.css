@@ -15,7 +15,7 @@ li {
   color: var(--natte_sort);
   text-transform: uppercase;
 }
-a:hover,
+nav a:hover,
 li:hover {
   color: var(--lov_gron);
   font-style: italic;
