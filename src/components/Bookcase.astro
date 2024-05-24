@@ -5,10 +5,10 @@
 <section id="bookcase">
 
     <template id="template" class="desktop">
-        <div class="book">
+        <button class="book">
             <img class="book_desktop" src="/img/OmNogen_ryg.png" alt="bog">
             <img class="book_mobile" src="/img/OmNogen_ryg.png" alt="bog">
-        </div>
+        </button>
         <div  class="panel">
             <div class="container">
                 <img class="image" src="/img/omnogen.png" alt="bog">
@@ -88,6 +88,9 @@
             document.querySelector('#bookcase').appendChild(copy);
 
 
+            
+
+           
 
 
 
@@ -100,24 +103,30 @@
 
                 // sætter klik på den specifikke bog, som så kører en funktion
                 book.addEventListener("click", function() {
+                    console.log('width is ' + window.innerWidth);
 
                     // function, der sætter display = none på alle elementer på siden, der kommer efter enhver bog
                     books.forEach(function(element) {
-                        element.nextElementSibling.style.display = "none";
-
+                        if (window.innerWidth >= 800) {
+                            element.nextElementSibling.style.maxWidth = null;
+                        }
+                        else { element.nextElementSibling.style.maxHeight = null; }
+                        
                         // sørger for at alle bøger er vist
                         element.style.display = "block";
                     });
 
                     // sætter elementet efter den bog, der er blevet trykket på (det ved den fra 'click' functionen) til at have display = block, så det bliver synligt
                     const panel = this.nextElementSibling;
-                    panel.style.display = "block";
-               /*      panel.style.transform ='translateX(340px)' */
+                    if (window.innerWidth >= 800) {
+                            panel.style.maxWidth = "1000px";
+                        }
+                        else { panel.style.maxHeight = "1000px"; }
 
                     // gemmer den klikkede bog
                     this.style.display = "none";
                 });
-            });
+            }); 
         }
  
 
@@ -141,20 +150,7 @@
     
 
     .panel {
-        display: none;
-        height: 530px;
-        /*animation: swipe_left 1s   ;*/ 
-    }
-
-
-
-    @keyframes swipe_left {
-        0%   {transform: translateX(100px);}
-        100% {transform: translateX(0);}
-    }
-    @keyframes swipe_right {
-        0%   {transform: translateX(0);}
-        100% {transform: translateX(600px);}
+        overflow: hidden;
     }
 
     hr {
@@ -164,22 +160,24 @@
     }
 
     .image {
-        height: 25vw;
+        height: 28vw;
         width: fit-content;
         
     }
 
     .book {
-        height: 30vw;
+        border: none;
+        height: 80vh;
     }
     .book img {
         width: 65px;
+        height: 80vh
     }
 
     .container {
         display: flex;
         justify-content: space-between;
-        margin: 10%;
+        margin: 5rem auto;
         gap: 10%;
 
         height: 100%;
@@ -187,7 +185,8 @@
         
     }
     .text {
-        height: 100%;
+        height: 60vh;
+        min-width: 300px;
         overflow: hidden;
     }
 
@@ -201,17 +200,25 @@
 
     .about {
         height: 300px;
+        min-width: 300px;
         overflow-x: hidden;
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        padding-bottom: 20px;
     }
     @media only screen and (min-width: 801px) {
 
         .book_mobile {
             display: none;
         }
+        .panel {
+        max-width: 0;
+        overflow: hidden;
+        transition: max-width 1s linear;
+
+    }
     }
     @media only screen and (max-width: 1200px) and (min-width: 801px){
         .container {
@@ -224,31 +231,42 @@
     }
 
     @media only screen and (max-width: 800px) {
-
         .book_desktop {
             display: none;
         }
 
         .book {
-            height: 60px;
+            height: 100%;
+            margin: -2px 0;
+            
         }
         .book img{
             transition: 0s;
-            width: 100vw;
-            height: auto;
-            padding: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         }
+
+        .image {
+            height: 40vw;
+        }
         #bookcase {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        width: 100%;
-        padding: 0;
-        gap: 0;
-        margin: 0;
-    }
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: auto;
+            width: 100%;
+        }
+        .container {
+            margin: 5%;
+            gap: 5%;
+            width: 85%;
+        }
+        .panel {
+            max-height: 0;
+            transition: max-height 1s linear;
+        
+
     }
 
 </style>
