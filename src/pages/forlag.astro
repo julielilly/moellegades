@@ -22,13 +22,13 @@ import Layout from '../layouts/Layout.astro'
     <section class="series">
         <div>
             <h2>Æra-Serien</h2>
-            <img src="/img/orange_book.svg" alt="orange book">
+            <img src="/img/ara.webp" alt="æra serien">
             <p class="light_font">Æra-serien er forlagets serie for debutanter.</p>
             <p>Æra-serien er et sted for eksperimenterende former og ny litteratur. Vi lægger vægt på et tæt  samarbejde mellem redaktør og forfatter. Det er sådan, vi vil skabe  debutantlitteratur, der skubber til grænserne for og sætter præg på den  danske litterære offentlighed. Med Æra-serien vil vi give plads til nye  og anderledes stemmer, der er i proces.</p>
         </div>
         <div>
             <h2>Arkade-Serien</h2>
-            <img src="/img/orange_book.svg" alt="orange book">
+            <img src="/img/arkade.webp" alt="arkade serien">
             <p class="light_font">Arkade-serien er forlagets serie for filosofi.</p>
             <p>I Arkade-serien bringes hidtil uoversatte værker af både anerkendte og oversete filosoffer, der bevæger sig i spændings-feltet mellem skønlitteratur og tænkning og belyser denne relation. Serien bygger på den række åbne seminarer om forholdet mellem litteratur og filosofi, der fandt sted i Møllegades Boghandel i årene 2015-2019, og i denne ånd ledsages seriens udgivelser således også af seminarer i boghandlen, der åbner værkerne op til samtale.</p>       
         </div>
@@ -64,6 +64,10 @@ import Layout from '../layouts/Layout.astro'
     .light_font {
         font-style: oblique;
     }
+
+    h2 {
+        padding: 2rem 0 0 0;
+    }
     
 
     @media only screen and (min-width: 600px) {
@@ -75,11 +79,15 @@ import Layout from '../layouts/Layout.astro'
         width: 65%;
     }
     .series {
+        padding-top: 4rem;
         display: flex;
         flex-direction: row;
     }
+    .series div {
+        width: 500px;
+    }
     img {
-        width: 400px;
+        width: 500px;
     }
   }
 </style>
