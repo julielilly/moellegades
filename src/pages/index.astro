@@ -5,18 +5,14 @@ import Pagelink from "../components/Pagelink.astro";
 
 <Layout>
   <h1>Møllegades Boghandel</h1>
-  <div class="imgdiv">
-    <p class="middle">
+  <p class="middle">
       Møllegades Boghandel er en frivilligt drevet boghandel og kulturelt
       mødested på Nørrebro. Vi tilbyder et bredt udvalg af ny nordisk
       litteratur, mindre forlag og unikke udgivelser. Udover bøger, arrangerer
       vi også spændende litterære events og tilbyder udlejning af vores
       hyggelige lokaler. Besøg os på Møllegade 8A.
-    </p>
-  </div>
-  <div class="imgdiv">
-    <img id="forsidesvg" src="/img/indexsvg.svg" alt="" />
-  </div>
+  </p>
+  <img id="forsidesvg" src="/img/indexsvg.svg" alt="" />
   <section class="grid1_1">
     <a href="/udlejning/"
       ><Pagelink
@@ -54,29 +50,17 @@ import Pagelink from "../components/Pagelink.astro";
 </Layout>
 
 <style>
-  @media only screen and (min-width: 600px) {
-    .grid1_1 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      justify-content: center;
-      row-gap: 4rem;
-      margin: 0;
-    }
-    .middle {
-      width: 60%;
-    }
-  }
-  .middle {
-    width: 60%;
-  }
-  .grid1_1 {
-    margin: 20px;
-  }
+
   h1 {
+    font-size: 4.5rem;
     text-align: center;
-    font-size: 5.5rem;
   }
+
+  .middle {
+      margin: -2rem auto auto auto;
+      width: 90%;
+      text-align: center;
+    }
 
   a,
   .linkpage li {
@@ -84,12 +68,26 @@ import Pagelink from "../components/Pagelink.astro";
   }
 
   #forsidesvg {
-    width: 50%;
+    display: block;
+    width: 90%;
+    margin: 3rem auto;
   }
 
-  .imgdiv {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 70px;
+  .grid1_1 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 4rem;
+    }
+
+  @media only screen and (min-width: 600px) {
+    .grid1_1 {
+      grid-template-columns: 1fr 1fr;
+    }
+    .middle {
+      width: 60%;
+    }
+    #forsidesvg {
+      width: 50%;
+    }
   }
 </style>
