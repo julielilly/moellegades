@@ -10,12 +10,12 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
       <img src={src} alt="event" /><img />
     </div>
   </div>
-  <div class="mobile">
+  <button class="mobile">
     <p>Læs om eventet her</p>
     <svg class="arrow" width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M14 2L3 12L14 22" stroke="black" stroke-width="4" stroke-linecap="round"/>
       </svg>
-  </div>
+  </button>
   <div class="text">
     <h3>{title}</h3>
     <div>
@@ -26,7 +26,7 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
   </div>
 
   <script>
-    //laver en variabel til hvert element, der skal bruges
+    //laver en variabel til links
     const links = document.querySelectorAll(".mobile");
     console.log(links);
 
@@ -36,23 +36,18 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
     // sætter klik på det specifikke link, som så kører en funktion
       link.addEventListener("click", function() {
 
-      // function, der sætter højden til 0 på alle elementer på siden, der kommer efter ethver link
-        links.forEach(function(element) {
-      
-          element.lastElementChild.style.transform = 'rotate(0deg)';
-          element.nextElementSibling.style.maxHeight = null;
-      });
-
-      console.log(this.nextElementSibling);
-      // sætter elementet efter det link, der er blevet trykket på (det ved den fra 'click' functionen) til at have en højde, så det bliver synligt
+      // giver søskende elementet en højde, hvis den ikke har en højde / fjerne højden, hvis den har en (gør at elementet bliver vist eller gemt)
       const textBox = this.nextElementSibling;
       const arrow = this.lastElementChild;
 
-      textBox.style.maxHeight = "1000px";
-      arrow.style.transform = 'rotate(-90deg)';
+      if (textBox.style.maxHeight) {
+        textBox.style.maxHeight = null;
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        textBox.style.maxHeight = textBox.scrollHeight + "px";
+        arrow.style.transform = 'rotate(-90deg)';
+      }
 
-      
-      
       });
     }); 
 
@@ -71,7 +66,6 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
   .text div p {
     padding-bottom: 2rem;
   }
-
  
   img {
    width: 100%;
@@ -90,6 +84,9 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
   .mobile {
       display: flex;
       justify-content: space-between;
+
+      background-color: transparent;
+      border: none;
     }
   .arrow {
     transition: transform 0.5s linear;
