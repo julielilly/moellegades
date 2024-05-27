@@ -10,27 +10,69 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
       <img src={src} alt="event" /><img />
     </div>
   </div>
+  <div class="mobile">
+    <p>Læs om eventet her</p>
+    <svg class="arrow" width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2L3 12L14 22" stroke="black" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+  </div>
   <div class="text">
     <h3>{title}</h3>
-    <p>{p1}</p>
-    <p>{p2}</p>
-    <p>{p3}</p>
+    <div>
+      <p>{p1}</p>
+      <p>{p2}</p>
+      <p>{p3}</p>
+    </div>
   </div>
+
+  <script>
+    //laver en variabel til hvert element, der skal bruges
+    const links = document.querySelectorAll(".mobile");
+    console.log(links);
+
+    // kører en function for hvert link
+    links.forEach(function(link) {
+
+    // sætter klik på det specifikke link, som så kører en funktion
+      link.addEventListener("click", function() {
+
+      // function, der sætter højden til 0 på alle elementer på siden, der kommer efter ethver link
+        links.forEach(function(element) {
+      
+          element.lastElementChild.style.transform = 'rotate(0deg)';
+          element.nextElementSibling.style.maxHeight = null;
+      });
+
+      console.log(this.nextElementSibling);
+      // sætter elementet efter det link, der er blevet trykket på (det ved den fra 'click' functionen) til at have en højde, så det bliver synligt
+      const textBox = this.nextElementSibling;
+      const arrow = this.lastElementChild;
+
+      textBox.style.maxHeight = "1000px";
+      arrow.style.transform = 'rotate(-90deg)';
+
+      
+      
+      });
+    }); 
+
+  </script>
 </section>
 
 <style>
   #grid1-1, .text {
     display: flex;
     flex-direction: column;
-    gap: 4rem;
+    gap: 2rem;
   }
   #grid1-1 {
     margin-bottom: 4rem;
   }
-
-  .text {
-    padding-top: 5rem;
+  .text div p {
+    padding-bottom: 2rem;
   }
+
+ 
   img {
    width: 100%;
   }
@@ -45,9 +87,28 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
     gap: 10px;
   }
 
+  .mobile {
+      display: flex;
+      justify-content: space-between;
+    }
+  .arrow {
+    transition: transform 0.5s linear;
+  }
+
+  @media only screen and (max-width: 599px) {
+  .text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+  }
+}
+
   @media only screen and (min-width: 600px) {
     #grid1-1 {
       flex-direction: row;
+    }
+    #grid1-1, .text {
+    gap: 4rem;
     }
     img {
      width: 40vw;
@@ -63,8 +124,15 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
     }
     .scroll_container {
       overflow-y: clip;
-      height: 850px;
+      height: 900px;
+    }
+    .text {
+    padding-top: 5rem;
+    }
+    .mobile {
+      display: none;
     }
 
   }
+
 </style>
