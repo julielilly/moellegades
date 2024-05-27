@@ -29,7 +29,7 @@ li:hover {
 }
 
 main {
-  padding-top: 7rem;
+  padding: 10rem 1rem 6rem 1rem;
 }
 
 @media only screen and (min-width: 600px) {

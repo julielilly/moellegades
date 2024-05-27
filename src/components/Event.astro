@@ -1,12 +1,12 @@
 ---
-const { episode, title, dato, tid, p, img } = Astro.props;
+const { title, dato, tid, p, src } = Astro.props;
 ---
 
 <section id="grid1-1">
   <div>
     <h3>{dato}</h3>
     <p>{tid}</p>
-    <img src="" alt="" />{img}<img />
+    <img src={src} alt="" /><img />
   </div>
   <div>
     <h3>{title}</h3>
