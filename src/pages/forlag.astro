@@ -1,18 +1,17 @@
 ---
 
 import Bookcase from '../components/Bookcase.astro';
+import PageIntro from '../components/PageIntro.astro';
 import Layout from '../layouts/Layout.astro'
 
 ---
 
 <Layout>
-    <section>
-        <h1>Forlaget Møllegades Boghandel</h1>
-        <div class="intro">
-        <p>Forlaget Møllegades Boghandel er en fortsættelse og forlængelse af den frivilligt drevne boghandel i Møllegade 8A. Drivkraften for både forlag og boghandel er fællesskabet og det personlige engagement samt ønsket om at give litteraturen tid og rum fra en platform fri af økonomiske interesser. I kraft af boghandlens position som samlingspunkt for litteraturinteresserede, har forlaget en særlig indsigt i og forbindelse til Danmarks spirende forfatterscene. Fællesskabet og nærheden, som boghandlen er bygget op omkring, tager vi med os ind i forlagets arbejde. Vi udgiver værker, der ofte overses af kommercielle forlag, og vi støtter nye og eksperimenterende forfattere. Forlaget samarbejder også med lokale kunstnere og aktører for at skabe unikke, tværfaglige udgivelser. Gennem vores arbejde ønsker vi at fremme en rig og mangfoldig litterær kultur, der reflekterer samfundets mange stemmer.</p>
-        <img src="/img/orange_book.svg" alt="orange book">
-        </div>
-    </section>
+    <PageIntro
+        title="Forlaget Møllegades Boghandel"
+        p="Forlaget Møllegades Boghandel er en fortsættelse og forlængelse af den frivilligt drevne boghandel i Møllegade 8A. Drivkraften for både forlag og boghandel er fællesskabet og det personlige engagement samt ønsket om at give litteraturen tid og rum fra en platform fri af økonomiske interesser. I kraft af boghandlens position som samlingspunkt for litteraturinteresserede, har forlaget en særlig indsigt i og forbindelse til Danmarks spirende forfatterscene. Fællesskabet og nærheden, som boghandlen er bygget op omkring, tager vi med os ind i forlagets arbejde. Vi udgiver værker, der ofte overses af kommercielle forlag, og vi støtter nye og eksperimenterende forfattere. Forlaget samarbejder også med lokale kunstnere og aktører for at skabe unikke, tværfaglige udgivelser. Gennem vores arbejde ønsker vi at fremme en rig og mangfoldig litterær kultur, der reflekterer samfundets mange stemmer."
+        src="/img/orange_book.svg"
+    />
 
     <section>
         <h1>Udgivelser</h1>

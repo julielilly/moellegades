@@ -1,0 +1,34 @@
+---
+const { title, src, p} = Astro.props;
+---
+
+<section>
+    <h1>{title}</h1>
+    <div class="intro">
+    <p>{p}</p>  
+    <img src={src} alt="book">
+    </div>
+</section>
+
+<style>
+    .intro {
+        display: flex;
+        gap: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .intro img {
+        display: none;
+    }
+
+    @media only screen and (min-width: 600px) {
+    .intro img {
+        display: block;
+        width: 10%;
+    }
+    
+    .intro p {
+        width: 65%;
+    }
+  }
+</style>

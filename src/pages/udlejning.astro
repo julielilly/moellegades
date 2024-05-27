@@ -3,8 +3,10 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <h1>Udlejning af lokaler</h1><section id="grid1-1">
+  
+  <section id="grid2-1">
     <div>
+      <h1>Udlejning af lokaler</h1>
       <p>
         Møllegades Boghandel tilbyder udlejning af vores hyggelige og
         inspirerende lokaler. Uanset om du har brug for et sted til en
@@ -13,14 +15,13 @@ import Layout from "../layouts/Layout.astro";
         dine behov.
       </p>
     </div>
-    <div>
-      <img src="/img/books.svg" alt="book" />
-    </div>
+    <img src="/img/books.svg" alt="book" />
   </section>
+
   <section id="grid1-1">
-    <div>
-      <h3>Forlokalet</h3>
-      <p>
+    <img class="forlokalet" src="/img/green_book.svg" alt="book" />
+    <h3 class="grid_column_1">Forlokalet</h3>
+    <p class="grid_column_1">
         Forlokalet i Møllegades Boghandel kan bruges til bogreceptioner og andre
         litterære arrangementer. Det åbne og indbydende miljø er ideelt til at
         fejre nye udgivelser, holde oplæsninger og samle litteraturentusiaster
@@ -28,17 +29,14 @@ import Layout from "../layouts/Layout.astro";
         tilbyder forlokalet en unik mulighed for at netværke og dele passionen
         for litteratur. Kontakt os for at høre mere om, hvordan du kan leje
         forlokalet til dit næste arrangement.
-      </p>
-      <p>Telefon: +45 29 90 48 86</p>
-      <p>Mail: info@moellegadesbohandel.dk</p>
-    </div>
-    <div><img src="/img/green_book.svg" alt="book" /></div>
+    </p>
+    <p class="grid_column_1"><span>Telefon:</span> +45 29 90 48 86</p>
+    <p class="grid_column_1"><span>Mail:</span> info@moellegadesbohandel.dk</p>
   </section>
+
   <section id="grid1-1">
-    <div><img src="/img/orange_book.svg" alt="book" /></div>
-    <div>
-      <h3>Baklokalet</h3>
-      <p>
+      <h3 class="grid_column_2 right_margin">Baglokalet</h3>
+      <p class="grid_column_2 right_margin">
         Vores baglokale fungerer som et læse- og skrivekreds om aftenen til en
         pris af 500 kr. Dette hyggelige og inspirerende rum er perfekt til små
         grupper, der ønsker at fordybe sig i litteraturen og dele deres tanker
@@ -47,33 +45,72 @@ import Layout from "../layouts/Layout.astro";
         kreativ atmosfære. Kontakt os for at reservere baglokalet til din næste
         læse- eller skrivekreds.
       </p>
-      <p>Telefon: +45 29 90 48 86</p>
-      <p>Mail: info@moellegadesbohandel.dk</p>
-    </div>
+      <p class="grid_column_2 right_margin"><span>Telefon:</span> +45 29 90 48 86</p>
+      <p class="grid_column_2 right_margin"><span>Mail:</span> info@moellegadesbohandel.dk</p>
+    <img class="baglokalet " src="/img/orange_book.svg" alt="book" />
   </section>
 </Layout>
 
 <style>
+
+  section {
+    padding-bottom: 4rem;
+  }
+
+  #grid2-1 img {
+    display: none;
+  }
+
   #grid1-1 {
     display: grid;
     grid-template-columns: 1fr;
   }
 
   p {
-    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
-  img {
-    max-width: 100%;
-    padding-left: 17rem;
-    margin-bottom: 7rem;
+  h3 {
+    padding-top: 0;
   }
+
+  .forlokalet, .baglokalet {
+    grid-row: 2/3;
+  }
+
   @media only screen and (min-width: 600px) {
-    main {
-      padding: 14rem 8rem;
-    }
     #grid1-1 {
       grid-template-columns: 1fr 1fr;
+    }
+
+    #grid2-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 8rem;
+    }
+
+    #grid2-1 img {
+    display: block;
+  }
+
+    .right_margin {
+      text-align: right;
+    }
+
+    .grid_column_1 {
+      grid-column: 2/3;
+    }
+
+    .grid_column_2 {
+      grid-column: 1/2;
+    }
+    .forlokalet{
+      grid-row: 1/5;
+    }
+
+    .baglokalet{
+      grid-row: 1/5;
+      grid-column: 2/3;
     }
   }
 </style>
