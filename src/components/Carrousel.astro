@@ -1,0 +1,151 @@
+---
+const { src1, src2, src3, src4 } = Astro.props;
+---
+  
+      <div class="slideshow">
+        <div class="slideshow-container">
+          <div class="mySlides fade">
+            <img
+              class="pic1"
+              src={src1}
+              alt="bok"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="pic1"
+              src={src2}
+              alt="bok"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="pic1"
+              src={src3}
+              alt="bok"
+            />
+          </div>
+          <div class="mySlides fade">
+            <img
+              class="pic1"
+              src={src4}
+              alt="bok"
+            />
+          </div>
+        </div>
+  
+        <div class="dot-container">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+  
+      </div>
+  
+    <script>
+      let slideIndex = 0;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+
+      showSlides();
+  
+      function showSlides() {
+
+        // warning, der skal altid være samme antal slides og dots
+        // den går igennem hver dot, og sætter den og dens slide til at være gemt
+        // (i = index) (sker når i er mindre end antalet af dots) (efter hver itteration tilføjer den 1 til i)
+        for (var i = 0; i < dots.length; i++) {
+            // fjerne klassen active fra dotten
+            dots[i].className = dots[i].className.replace(" active", "");
+
+            // konverterer slidet til html element, for at kunne style og putter så display = none
+            (slides[i] as HTMLElement).style.display = "none";
+        }
+        
+        // viser det ønskede slide og dot
+        (slides[slideIndex] as HTMLElement).style.display = "block";
+        dots[slideIndex].className += " active";
+        
+        // tilføjer en til indexet
+        slideIndex++;
+
+        // hvis indexet bliver større end antallet af dots, bliver indexet 0 igen (length starter på 1, et array starter på 0)
+        if (slideIndex > dots.length - 1) {
+            slideIndex = 0;
+        }
+    }
+             
+        // kører et for-loop, der sætter klik på dots
+        for (var i = 0; i < dots.length; i++) {
+            dots[i].addEventListener('click', function(){
+
+                //  finder indexet af den klikkede dot i arrayet af dots, og kører funktionen curretnSlide med det index
+                currentSlide(Array.from(dots).indexOf(this))
+            });
+        }
+
+        // n er et parrameter og bliver fundet gennemt det foregående for-loop
+        // funktionen kører showSlides med det nye index
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides();
+        }
+
+        // setInterval er en javaScript funktion, som tager imod en funktion og antal millisekunder
+        // den kører funktionen i intavaller af det antal millisekunder, der er angivet
+        setInterval(showSlides, 3000);
+
+    </script>
+  </Layout>
+
+
+  <style>
+    .slideshow-container {
+      position: relative;
+      margin: auto;
+      padding-top: 1rem;
+    }
+  
+    .mySlides {
+      display: none;
+    }
+  
+    .mySlides img {
+      width: auto;
+      max-width: 100%;
+      height: 500px;
+      display: block;
+      margin: auto;
+    }
+    .slideshow {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .dot {
+      cursor: pointer;
+      height: 10px;
+      width: 10px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+  
+    .active,
+    .dot:hover {
+      background-color: var(--lov_gron);
+    }
+  
+    @media only screen and (min-width: 800px) {
+      .slideshow-container {
+      width: 25vw;
+      }
+    }
+  </style>
+  

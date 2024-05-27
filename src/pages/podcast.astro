@@ -11,7 +11,7 @@ import PodcastSection from "../components/PodcastSection.astro";
         <div class="podcast_intro">
         <p>Møllegades Boghandel Podcast er en podcastserie om litteratur lavet  af de frivillige i Møllegades Boghandel. Podcasten ønsker at skabe et  digitalt rum for litteraturen, hvor vi især har fokus på forfattere  fra de mindre forlag. Der vil både være klassiske interviews med  aktuelle forfattere samt oplæsninger, filosofiske debatter,  sprogperformances, kritikersaloner, forfatterportrætter mv. Formaterne  fra tidligere initiativer i Møllegades Boghandel såsom Kritikersalon og  Fredagsfilosofi i Møllegade overføres og fortsætter i podcasten.</p>
         <p>Podcasten vil afspejle den forskellighed som Møllegades Boghandel rummer. Det er ikke den/de samme frivillige, der  kommer til at tale/interviewe hver gang. Podcasten er en forlængelse af  boghandlen, hvor der kontinuerligt vil blive lavet nye podcasts af  frivilliggruppen. Vi håber, at podcasten kan afspejle den variation som  Møllegades Boghandel rummer af frivillige.</p>
-        <p>Møllegades Boghandels Podcast er støtte af Statens Kunstfond.</p>
+        <p class="color">Møllegades Boghandels Podcast er støtte af Statens Kunstfond.</p>
         </div>
         <a href="https://www.kunst.dk/" target="_blank"><img src="/img/sk_icon.svg" alt="link til statens kunstfond"></a>
     </div>
@@ -34,15 +34,17 @@ import PodcastSection from "../components/PodcastSection.astro";
         text-align: end;
     }
 
-    a {
+    a img{
         filter: brightness(0);
      
     }
-    a:hover {
+    a img:hover {
         filter: brightness(1);
     }
 
-    
+    .color {
+        color: var(--lov_gron);
+    }
 
 
     @media only screen and (min-width: 700px) {

@@ -7,35 +7,10 @@
   src: url(../fonts/Maitree-Regular.woff2);
 }
 
-a,
-li {
-  list-style: none;
-  text-decoration: none;
-  font-family: Helvetica, Arial, sans-serif;
-  color: var(--natte_sort);
-  text-transform: uppercase;
-}
-nav a:hover,
-li:hover {
-  color: var(--lov_gron);
-  font-style: italic;
-  transition: color 0.3s ease;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-main {
-  padding-top: 7rem;
-}
-
-@media only screen and (min-width: 600px) {
-  main {
-    padding: 10rem 8rem;
-  }
 }
 
 :root {
@@ -46,8 +21,28 @@ main {
   --natte_sort: #000000;
 }
 
+main {
+  padding: 10rem 1rem 6rem 1rem;
+}
+
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  font-family: Helvetica, Arial, sans-serif;
+  color: var(--natte_sort);
+  text-transform: uppercase;
+}
+
+nav a:hover,
+li:hover {
+  color: var(--lov_gron);
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: garamond;
   font-weight: bold;
   line-height: 150%;
@@ -64,7 +59,7 @@ h2 {
 }
 
 h3 {
-  font-size: 2.38rem;
+  font-size: 2rem;
   font-family: garamond;
   font-weight: medium;
   line-height: 125%;
@@ -82,18 +77,6 @@ p {
   font-family: maitree;
 }
 
-.footer_body {
-  p {
-    font-size: 1rem;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-  nav ul li {
-    font-size: 1.5rem;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-}
-
 /* scrollbar */
 
 ::-webkit-scrollbar {
@@ -103,4 +86,18 @@ p {
 ::-webkit-scrollbar-thumb {
   background: #808080;
   border-radius: 10px;
+}
+
+/* desktop */
+
+@media only screen and (min-width: 600px) {
+  main {
+    padding: 10rem 8rem;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-size: 2.38rem;
+  }
 }

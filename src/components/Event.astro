@@ -1,40 +1,135 @@
 ---
-const { episode, title, dato, tid, p, img } = Astro.props;
+const { title, dato, tid, p1, p2, p3, src } = Astro.props;
 ---
 
 <section id="grid1-1">
-  <div>
-    <h3>{dato}</h3>
-    <p>{tid}</p>
-    <img src="" alt="" />{img}<img />
+  <div class="scroll_container">
+    <div class="scroll">
+      <h3>{dato}</h3>
+      <p>{tid}</p>
+      <img src={src} alt="event" /><img />
+    </div>
   </div>
-  <div>
+  <button class="mobile">
+    <p>Læs om eventet her</p>
+    <svg class="arrow" width="16" height="24" viewBox="0 0 16 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 2L3 12L14 22" stroke="black" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+  </button>
+  <div class="text">
     <h3>{title}</h3>
-    <p>{p}</p>
+    <div>
+      <p>{p1}</p>
+      <p>{p2}</p>
+      <p>{p3}</p>
+    </div>
   </div>
+
+  <script>
+    //laver en variabel til links
+    const links = document.querySelectorAll(".mobile");
+    console.log(links);
+
+    // kører en function for hvert link
+    links.forEach(function(link) {
+
+    // sætter klik på det specifikke link, som så kører en funktion
+      link.addEventListener("click", function() {
+
+      // giver søskende elementet en højde, hvis den ikke har en højde / fjerne højden, hvis den har en (gør at elementet bliver vist eller gemt)
+      const textBox = this.nextElementSibling;
+      const arrow = this.lastElementChild;
+
+      if (textBox.style.maxHeight) {
+        textBox.style.maxHeight = null;
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        textBox.style.maxHeight = textBox.scrollHeight + "px";
+        arrow.style.transform = 'rotate(-90deg)';
+      }
+
+      });
+    }); 
+
+  </script>
 </section>
 
 <style>
+  #grid1-1, .text {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
   #grid1-1 {
-    display: grid;
-    grid-template-columns: 1fr;
+    margin-bottom: 4rem;
   }
-
-  p {
-    padding-top: 2rem;
+  .text div p {
+    padding-bottom: 2rem;
   }
-
+ 
   img {
-    max-width: 100%;
-    padding-left: 17rem;
-    padding-top: 13rem;
+   width: 100%;
   }
+
+  h3 {
+    padding: 0;
+  }
+
+  .scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mobile {
+      display: flex;
+      justify-content: space-between;
+
+      background-color: transparent;
+      border: none;
+    }
+  .arrow {
+    transition: transform 0.5s linear;
+  }
+
+  @media only screen and (max-width: 599px) {
+  .text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s linear;
+  }
+}
+
   @media only screen and (min-width: 600px) {
-    main {
-      padding: 14rem 8rem;
-    }
     #grid1-1 {
-      grid-template-columns: 1fr 1fr;
+      flex-direction: row;
     }
+    #grid1-1, .text {
+    gap: 4rem;
+    }
+    img {
+     width: 40vw;
+     padding-top: 1rem;
+    }
+
+    .scroll {
+      position: -webkit-sticky; /* Safari */
+      position: sticky;
+      top: 7rem;
+      height: 1px;
+
+    }
+    .scroll_container {
+      overflow-y: clip;
+      height: 900px;
+    }
+    .text {
+    padding-top: 5rem;
+    }
+    .mobile {
+      display: none;
+    }
+
   }
+
 </style>
