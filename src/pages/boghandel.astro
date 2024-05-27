@@ -10,7 +10,8 @@ import PageIntro from '../components/PageIntro.astro';
         src="/img/green_book.svg"
     />
 
-  <section id="grid1-1">
+  <section >
+
     <div>
       <h3>Udover de store danske forlag, fører vi blandt andet:</h3>
       <p>
@@ -33,6 +34,7 @@ import PageIntro from '../components/PageIntro.astro';
         <span>Ø</span> Øverste Kirurgiske.
       </p>
     </div>
+
     <div id="tid">
       <h3>Og tidsskrifterne:</h3>
       <p>
@@ -51,14 +53,12 @@ import PageIntro from '../components/PageIntro.astro';
 </Layout>
 
 <style>
-  #tid {
-    padding-top: 30rem;
-    text-align: right;
-    padding-left: 5rem;
-  }
 
-  #tekst {
-    padding-top: 2rem;
+  section div {
+    width: 100%;
+  }
+  #tid {
+    text-align: right;
   }
 
   span {
@@ -69,23 +69,14 @@ import PageIntro from '../components/PageIntro.astro';
     font-weight: bold;
   }
 
-  img {
-    max-width: 100%;
-    align-self: center;
+  @media only screen and (min-width: 600px) {
+    section div {
+    width: 60%;
+  }
+  #tid {
+    text-align: right;
     margin-left: 40%;
   }
-
-  #grid1-1 {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  @media only screen and (min-width: 600px) {
-    main {
-      padding: 14rem 8rem;
-    }
-    #grid1-1 {
-      grid-template-columns: 1fr 1fr;
-    }
+    
   }
 </style>
