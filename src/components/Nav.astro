@@ -120,17 +120,24 @@
       }
     }
 
-    //gør den nuværende sides nav grøn
+    //function til at highligte nuværende side
     function setupNavbar() {
+
+      // sætter variabel til at kunne differentirere mellem hvorvidt man er på forsiden (true) eller ej (false)
+      let shouldHighligtIcon = true;
+
+      //gør den nuværende sides nav grøn
       navItems.forEach((item) => {
         if (window.location.href.includes(item.id)) {
           item.classList.add("current_nav");
+          shouldHighligtIcon = false;
         }
-        if (!item.classList.contains("current_nav")) {
-        logo.style.fill = "var(--lov_gron)" }
-        
       });
       
+      // hvis variablen er = true, skiftes farve på logo, da vi derfor er på forsiden
+      if (shouldHighligtIcon === true) {
+        logo.style.fill = "var(--lov_gron)"
+        }
       
     }
   </script>
