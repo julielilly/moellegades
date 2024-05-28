@@ -1,8 +1,8 @@
 ---
-const { src1, src2, src3, src4 } = Astro.props;
+const { src1, src2, src3, src4, id } = Astro.props;
 ---
   
-      <div class="slideshow">
+      <div class="slideshow" id={id}>
         <div class="slideshow-container">
           <div class="mySlides fade">
             <img
@@ -109,12 +109,13 @@ const { src1, src2, src3, src4 } = Astro.props;
   
     .mySlides {
       display: none;
+      height: 400px;
     }
   
     .mySlides img {
-      width: auto;
-      max-width: 100%;
-      height: 500px;
+
+      height: 100%;
+      max-width: 100% ;
       display: block;
       margin: auto;
     }
@@ -141,11 +142,25 @@ const { src1, src2, src3, src4 } = Astro.props;
     .dot:hover {
       background-color: var(--lov_gron);
     }
+
+      /* til udlejning */
+      #forlokalet {
+        grid-row: 2/3;
+      }
   
     @media only screen and (min-width: 800px) {
       .slideshow-container {
       width: 25vw;
       }
+
+      #forlokalet .slideshow-container {
+      width: 40vw;
+      }
+      #forlokalet{
+      grid-row: 1/5;
+      }
     }
+   
+
   </style>
   
