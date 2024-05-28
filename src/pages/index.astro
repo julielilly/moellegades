@@ -18,29 +18,30 @@ import Pagelink from "../components/Pagelink.astro";
       ><Pagelink
         header="Lokale Udlejning"
         text="Vi udlejer vores lokaler til reception, skriveværksted, oplæsning osv. Læs mere her."
+        imageClass="udlejning";
       >
-        <img src="/img/placeholder-img.png" alt="" width="100%" />
+      
       </Pagelink></a
     >
     <a href="/kalender/"
       ><Pagelink
         header="Events // kalender"
         text="Læs om vores litteraturfestival, Lyse Nætter og læs mere om vores andre kommende events."
+        imageClass="event";
       >
-        <img src="/img/placeholder-img.png" alt="" width="100%" />
       </Pagelink></a
     >
     <a href="/forlag/">
       <Pagelink
         header="Forlaget Møllegades Boghandel"
-        text="Læs mere om Møllegades Boghandel og vores udvalg af ny nordisk litteratur her.">
-      <img src="/img/placeholder-img.png" alt="" width="100%" />
+        text="Læs mere om Møllegades Boghandel og vores udvalg af ny nordisk litteratur her."
+        imageClass="forlag";>
     </Pagelink></a>
     <a href="/boghandel/"
       ><Pagelink
         header="Møllegades Boghandel"
-        text="Frivilligdrevet boghandel på Nørrebro. Læs her om de forlag og tidsskrifter, vi fører.">
-        <img src="/img/placeholder-img.png" alt="" width="100%" />
+        text="Frivilligdrevet boghandel på Nørrebro. Læs her om de forlag og tidsskrifter, vi fører."
+        imageClass="boghandel";>
       </Pagelink></a>
   </section>
 </Layout>
@@ -76,7 +77,7 @@ import Pagelink from "../components/Pagelink.astro";
       gap: 4rem;
     }
 
-  @media only screen and (min-width: 600px) {
+  @media only screen and (min-width: 800px) {
     .grid1_1 {
       grid-template-columns: 1fr 1fr;
     }

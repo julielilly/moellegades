@@ -1,11 +1,12 @@
 ---
-const { header, text, src } = Astro.props;
+const { header, text, imageClass } = Astro.props;
 ---
 
 <article>
   <h4>{header}</h4>
   <p>{text}</p>
-  <slot/>
+  <div class={imageClass}>
+  </div>
 </article>
 
 <style>
@@ -15,4 +16,65 @@ const { header, text, src } = Astro.props;
     flex-direction: column;
     gap: 0.5rem;
   }
+
+ 
+  .udlejning {
+    background: url('/img/udelejning.webp');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .event {
+    background: url('/img/kalender.webp');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .forlag {
+    background: url('/img/forlag.webp');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .boghandel {
+    background: url('/img/boghandel.webp');
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .forlag:hover {
+    background: url('/img/forlag_hover.webp');
+    background-repeat: no-repeat;
+  }
+  .boghandel:hover {
+    background: url('/img/boghandel_hover.webp');
+    background-repeat: no-repeat;
+  }
+  .udlejning:hover, .event:hover, .forlag:hover, .boghandel:hover {
+    background-size: 110%;
+    background-position: center;
+  }
+
+   div {
+    width: 90vw;
+    height: 330px;
+    margin: auto;
+
+    transition: background-size 0.5s ;
+    transition: background 0.5s ;
+  }
+
+  @media only screen and (max-width: 799px) and (min-width: 600px) {
+      div {
+        width: 70vw;
+      }
+    }
+
+  @media only screen and (min-width: 800px) {
+      div {
+        width: 39vw;
+      }
+    }
+
 </style>
