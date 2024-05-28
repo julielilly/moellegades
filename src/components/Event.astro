@@ -1,5 +1,5 @@
 ---
-const { title, dato, tid, p1, p2, p3, src } = Astro.props;
+const { title, dato, tid, p1, p2, p3, src, alt } = Astro.props;
 ---
 
 <section id="grid1-1">
@@ -7,7 +7,7 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
     <div class="scroll">
       <h3>{dato}</h3>
       <p>{tid}</p>
-      <img src={src} alt="event" /><img />
+      <img src={src} alt={alt}/>
     </div>
   </div>
   <button class="mobile">
@@ -47,7 +47,6 @@ const { title, dato, tid, p1, p2, p3, src } = Astro.props;
         textBox.style.maxHeight = textBox.scrollHeight + "px";
         arrow.style.transform = 'rotate(-90deg)';
       }
-
       });
     }); 
 
