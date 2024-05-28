@@ -53,7 +53,7 @@
     </div>
   </ul>
   <ul id="menu" class="hidden">
-    <li><img src="/img/books.svg" alt="" /></li>
+    <li><img class="books" src="/img/books.svg" alt="" /></li>
     <li><a href="/kalender/" aria-label="Gå til kalender">Kalender</a></li>
     <li><a href="/forlag/" aria-label="Gå til forlag">Forlag</a></li>
     <li><a href="/boghandel/" aria-label="Gå til Boghandlen">Boghandlen</a></li>
@@ -145,6 +145,12 @@
 
 <style>
 
+  .books {
+    width: 30%;
+    margin: auto;
+    display: block;
+  }
+
   .logo svg {
     width: 60px;
     height: 60px;
@@ -177,7 +183,7 @@
   #menu {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 2.5rem;
     align-items: center;
     position: fixed;
     width: 100%;
